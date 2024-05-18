@@ -1,0 +1,40 @@
+{
+	"page": {
+		"example": {
+			"h1": {
+				"text": "Example heading"
+			},
+			"title": "Example Page",
+			"action": {
+				"example-action": {
+					"success": {
+						"message": "Example success!"
+					},
+					"error": {
+						"message": "Example error!"
+					}
+				},
+				"example": {
+					"button": {
+						"label": "Click me"
+					}
+				}
+			}
+		}
+	},
+	"header": {
+		"theme-selector": {
+			"button": {
+				"label": "Theme"
+			},
+			"menu": {
+				"mode": {
+					"label": "Mode",
+					"switch": {
+						"title": "Toggle light or dark mode"
+					}
+				}
+			}
+		}
+	}
+}

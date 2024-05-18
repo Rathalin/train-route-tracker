@@ -1,0 +1,40 @@
+{
+	"page": {
+		"example": {
+			"h1": {
+				"text": "Beispielüberschrift"
+			},
+			"title": "Beispielseite",
+			"action": {
+				"example-action": {
+					"success": {
+						"message": "Beispielerfolg!"
+					},
+					"error": {
+						"message": "Beispielfehler!"
+					}
+				},
+				"example": {
+					"button": {
+						"label": "Klick mich"
+					}
+				}
+			}
+		}
+	},
+	"header": {
+		"theme-selector": {
+			"button": {
+				"label": "Design"
+			},
+			"menu": {
+				"mode": {
+					"label": "Modus",
+					"switch": {
+						"title": "Zwischen Hell- und Dunkelmodus wechseln"
+					}
+				}
+			}
+		}
+	}
+}
