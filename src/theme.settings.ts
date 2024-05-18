@@ -1,5 +1,5 @@
 export const themeOptions = [
-	'radix',
+	'my custom theme',
 	'skeleton',
 	'wintry',
 	'modern',
@@ -14,7 +14,7 @@ export const themeOptions = [
 export type ThemeOption = (typeof themeOptions)[number]
 export type ColorScheme = 'dark' | 'light'
 
-export const defaultTheme: ThemeOption = 'radix'
+export const defaultTheme: ThemeOption = 'my custom theme'
 export const defaultColorScheme: ColorScheme = 'dark'
 
 export const themeCookieKey = 'theme'

@@ -33,7 +33,7 @@
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<a href="/" class="transition duration-10l0 hover:scale-105">
-					<strong class="text-xl uppercase">Radix</strong>
+					<strong class="text-xl uppercase">SVELTE SKELETON TEMPLATE</strong>
 				</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">

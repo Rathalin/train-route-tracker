@@ -1,7 +1,7 @@
 import { join } from 'path'
 import type { Config } from 'tailwindcss'
 import { skeleton } from '@skeletonlabs/tw-plugin'
-import { radix } from './src/radix'
+import { myCustomTheme } from './src/my-custom-theme'
 import forms from '@tailwindcss/forms'
 
 export default {
@@ -29,7 +29,7 @@ export default {
 					'gold-nouveau',
 					'crimson',
 				],
-				custom: [radix],
+				custom: [myCustomTheme],
 			},
 		}),
 	],
