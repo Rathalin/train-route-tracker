@@ -3,8 +3,22 @@
 	import SpeedWaypoint from './SpeedWaypoint.svelte'
 	import StationWaypoint from './StationWaypoint.svelte'
 	import TableColumn from './TableColumn.svelte'
+	import KilometerBoard from './KilometerBoard.svelte'
+	import WaypointProgress from './WaypointProgress.svelte'
 
 	export let data
+
+	let lastSelectedIndex = 0
+
+	function getWaypointProgress(index: number, max: number) {
+		if (index < max) {
+			return 'passed'
+		}
+		if (index > max) {
+			return 'upcoming'
+		}
+		return 'current'
+	}
 </script>
 
 <svelte:head>
@@ -17,41 +31,52 @@
 	</h1>
 
 	<div class="table-container">
-		<table class="table table-hover max-w-4xl pb-4 mb-10">
+		<table class="table table-hover max-w-4xl mb-10">
 			<thead>
 				<tr>
-					<th></th>
+					<th class="w-10">{$_('page.train-routes.table.progress')}</th>
 					<th class="table-cell-fit">{$_('page.train-routes.table.kilometer')}</th>
+					<th class="table-cell-fit"></th>
 					<th>{$_('page.train-routes.table.waypoint')}</th>
-					<th>{$_('page.train-routes.table.description')}</th>
+					<th>{$_('page.train-routes.table.notes')}</th>
 				</tr>
 			</thead>
-			{#each data.sections as section}
-				<label
-					class="table-row border-b border-b-surface-600 last-of-type:border-b-transparent hover:bg-surface-700"
+			{#each data.waypoints as waypoint}
+				<tr
+					class="table-row hover:text-white hover:bg-secondary-500 cursor-pointer {waypoint.id ===
+					lastSelectedIndex
+						? 'bg-secondary-800'
+						: ''} {waypoint.id < lastSelectedIndex ? 'text-surface-500' : ''}"
+					on:click={() => {
+						lastSelectedIndex = waypoint.id
+					}}
 				>
-					<TableColumn>
-						<input class="checkbox" type="checkbox" />
-					</TableColumn>
-					{#if section.data.type === 'speed-increase'}
+					<td>
+						<span class="flex flex-row justify-center">
+							<WaypointProgress progress={getWaypointProgress(waypoint.id, lastSelectedIndex)} />
+						</span>
+					</td>
+					<TableColumn><KilometerBoard kilometer={waypoint.kilometer} /></TableColumn>
+					{#if waypoint.data.type === 'speed-increase'}
 						<SpeedWaypoint
-							kilometer={section.kilometer}
-							speed={section.data.speed}
+							speed={waypoint.data.speed}
 							speedChange={'increase'}
+							notes={waypoint.notes}
 						/>
-					{:else if section.data.type === 'speed-decrease'}
+					{:else if waypoint.data.type === 'speed-decrease'}
 						<SpeedWaypoint
-							kilometer={section.kilometer}
-							speed={section.data.speed}
+							speed={waypoint.data.speed}
 							speedChange={'decrease'}
+							notes={waypoint.notes}
 						/>
-					{:else if section.data.type === 'station'}
-						<StationWaypoint kilometer={section.kilometer} stationName={section.data.name} />
+					{:else if waypoint.data.type === 'station'}
+						<StationWaypoint stationName={waypoint.data.name} notes={waypoint.notes} />
 					{:else}
-						<div>?</div>
+						<div>TODO</div>
 					{/if}
-				</label>
+				</tr>
 			{/each}
+			<tfoot class="h-1"></tfoot>
 		</table>
 	</div>
 </div>

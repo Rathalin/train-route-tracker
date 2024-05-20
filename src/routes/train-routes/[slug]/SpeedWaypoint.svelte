@@ -1,19 +1,19 @@
 <script lang="ts">
-	import KilometerBoard from './KilometerBoard.svelte'
 	import TableColumn from './TableColumn.svelte'
+	import SpeedometerIcon from 'svelte-material-icons/Speedometer.svelte'
+	import SpeedometerSlowIcon from 'svelte-material-icons/SpeedometerSlow.svelte'
 
-	export let kilometer: {
-		integer: number
-		decimal: number
-	}
 	export let speed: number
 	export let speedChange: 'increase' | 'decrease'
+	export let notes: string
 </script>
 
-<TableColumn><KilometerBoard {kilometer} /></TableColumn>
-<TableColumn>{speed}</TableColumn>
-{#if speedChange === 'increase'}
-	<TableColumn>↑</TableColumn>
-{:else if speedChange === 'decrease'}
-	<TableColumn>↓</TableColumn>
-{/if}
+<TableColumn>
+	{#if speedChange === 'increase'}
+		<span class="text-success-400"><SpeedometerIcon /></span>
+	{:else if speedChange === 'decrease'}
+		<span class="text-error-400"><SpeedometerSlowIcon /></span>
+	{/if}
+</TableColumn>
+<TableColumn><span>{speed}</span></TableColumn>
+<TableColumn><span>{notes}</span></TableColumn>

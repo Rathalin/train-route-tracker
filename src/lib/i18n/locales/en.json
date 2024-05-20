@@ -30,7 +30,10 @@
 			"table": {
 				"kilometer": "Kilometer",
 				"waypoint": "Waypoint",
-				"description": "Description"
+				"description": "Description",
+				"icon": "Icon",
+				"progress": "Progress",
+				"notes": "Notes"
 			}
 		}
 	},

@@ -30,7 +30,10 @@
 			"table": {
 				"kilometer": "Kilometer",
 				"waypoint": "Wegpunkt",
-				"description": "Beschreibung"
+				"description": "Beschreibung",
+				"icon": "Icon",
+				"progress": "Fortschritt",
+				"notes": "Notiz"
 			}
 		}
 	},

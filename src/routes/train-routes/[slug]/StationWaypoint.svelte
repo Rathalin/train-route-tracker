@@ -1,14 +1,11 @@
 <script lang="ts">
-	import KilometerBoard from './KilometerBoard.svelte'
 	import TableColumn from './TableColumn.svelte'
+	import HomeIcon from 'svelte-material-icons/Home.svelte'
 
-	export let kilometer: {
-		integer: number
-		decimal: number
-	}
 	export let stationName: string
+	export let notes: string
 </script>
 
-<TableColumn><KilometerBoard {kilometer} /></TableColumn>
-<TableColumn>{stationName}</TableColumn>
-<TableColumn></TableColumn>
+<TableColumn><span class="text-tertiary-400"><HomeIcon /></span></TableColumn>
+<TableColumn><span>{stationName}</span></TableColumn>
+<TableColumn><span>{notes}</span></TableColumn>
