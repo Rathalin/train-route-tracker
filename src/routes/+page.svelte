@@ -33,6 +33,10 @@
 		<span>{$_('page.example.h1.text')}</span>
 	</h1>
 
+	<article class="mb-10">
+		<a class="underline" href="/train-routes/wrn-mrz">{'Wiener Neustadt -> Mürzzuschlag'}</a>
+	</article>
+
 	<article>
 		<div class="flex flex-row gap-4">
 			<form

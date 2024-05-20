@@ -20,6 +20,18 @@
 					}
 				}
 			}
+		},
+		"traine-routes": {
+			"h1": {
+				"text": "Streckenplan für {routeName}"
+			}
+		},
+		"train-routes": {
+			"table": {
+				"kilometer": "Kilometer",
+				"waypoint": "Wegpunkt",
+				"description": "Beschreibung"
+			}
 		}
 	},
 	"header": {

@@ -33,7 +33,7 @@
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<a href="/" class="transition duration-10l0 hover:scale-105">
-					<strong class="text-xl uppercase">SVELTE SKELETON TEMPLATE</strong>
+					<strong class="text-xl uppercase">TRAIN ROUTES</strong>
 				</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
@@ -42,6 +42,8 @@
 		</AppBar>
 	</svelte:fragment>
 	<!-- Page Route Content -->
-	<slot />
+	<main class="container mx-auto">
+		<slot />
+	</main>
 	<svelte:fragment slot="footer"></svelte:fragment>
 </AppShell>

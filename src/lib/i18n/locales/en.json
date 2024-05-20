@@ -20,6 +20,18 @@
 					}
 				}
 			}
+		},
+		"traine-routes": {
+			"h1": {
+				"text": "Route plan for {routeName}"
+			}
+		},
+		"train-routes": {
+			"table": {
+				"kilometer": "Kilometer",
+				"waypoint": "Waypoint",
+				"description": "Description"
+			}
 		}
 	},
 	"header": {

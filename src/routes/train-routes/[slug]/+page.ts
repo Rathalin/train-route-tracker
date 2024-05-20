@@ -32,7 +32,7 @@ export function load({ params }) {
 					},
 					{
 						kilometer: { integer: 69, decimal: 0 },
-						data: { type: 'speed-restriction', speed: 150 },
+						data: { type: 'speed-decrease', speed: 150 },
 					},
 					{
 						kilometer: { integer: 69, decimal: 9 },
@@ -44,11 +44,11 @@ export function load({ params }) {
 					},
 					{
 						kilometer: { integer: 76, decimal: 0 },
-						data: { type: 'speed-restriction', speed: 80 },
+						data: { type: 'speed-decrease', speed: 80 },
 					},
 					{
 						kilometer: { integer: 76, decimal: 8 },
-						data: { type: 'speed-restriction', speed: 70 },
+						data: { type: 'speed-decrease', speed: 70 },
 					},
 					{
 						kilometer: { integer: 77, decimal: 6 },
@@ -64,7 +64,7 @@ export function load({ params }) {
 					},
 					{
 						kilometer: { integer: 82, decimal: 0 },
-						data: { type: 'speed-restriction', speed: 70 },
+						data: { type: 'speed-decrease', speed: 70 },
 					},
 					{
 						kilometer: { integer: 84, decimal: 8 },
@@ -72,7 +72,7 @@ export function load({ params }) {
 					},
 					{
 						kilometer: { integer: 84, decimal: 9 },
-						data: { type: 'speed-restriction', speed: 60 },
+						data: { type: 'speed-decrease', speed: 60 },
 					},
 					{
 						kilometer: { integer: 88, decimal: 1 },
@@ -84,7 +84,7 @@ export function load({ params }) {
 					},
 					{
 						kilometer: { integer: 91, decimal: 8 },
-						data: { type: 'speed-restriction', speed: 60 },
+						data: { type: 'speed-decrease', speed: 60 },
 					},
 					{
 						kilometer: { integer: 92, decimal: 2 },
@@ -96,7 +96,7 @@ export function load({ params }) {
 					},
 					{
 						kilometer: { integer: 100, decimal: 2 },
-						data: { type: 'speed-restriction', speed: 50 },
+						data: { type: 'speed-decrease', speed: 50 },
 					},
 					{
 						kilometer: { integer: 102, decimal: 0 },
@@ -108,7 +108,7 @@ export function load({ params }) {
 					},
 					{
 						kilometer: { integer: 103, decimal: 4 },
-						data: { type: 'speed-restriction', speed: 40 },
+						data: { type: 'speed-decrease', speed: 40 },
 					},
 					{
 						kilometer: { integer: 103, decimal: 5 },
@@ -128,7 +128,7 @@ export function load({ params }) {
 					},
 					{
 						kilometer: { integer: 115, decimal: 0 },
-						data: { type: 'speed-restriction', speed: 40 },
+						data: { type: 'speed-decrease', speed: 40 },
 					},
 					{
 						kilometer: { integer: 116, decimal: 7 },
@@ -142,13 +142,13 @@ export function load({ params }) {
 	}
 }
 
-type SectionData =
+type WaypointData =
 	| {
 			type: 'station'
 			name: string
 	  }
 	| {
-			type: 'speed-restriction'
+			type: 'speed-decrease'
 			speed: number
 	  }
 	| {
@@ -159,15 +159,15 @@ type SectionData =
 			type: 'neutral-section'
 	  }
 
-type Section = {
+type Waypoint = {
 	kilometer: {
 		integer: number
 		decimal: number
 	}
-	data: SectionData
+	data: WaypointData
 }
 
 type TrainRoute = {
 	title: string
-	sections: Section[]
+	sections: Waypoint[]
 }
