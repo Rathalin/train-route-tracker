@@ -35,6 +35,12 @@
 				"progress": "Progress",
 				"notes": "Notes"
 			}
+		},
+		"home": {
+			"title": "Routes",
+			"h1": {
+				"text": "Route plans"
+			}
 		}
 	},
 	"header": {

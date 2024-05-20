@@ -35,6 +35,12 @@
 				"progress": "Fortschritt",
 				"notes": "Notiz"
 			}
+		},
+		"home": {
+			"title": "Routen",
+			"h1": {
+				"text": "Routenpläne"
+			}
 		}
 	},
 	"header": {

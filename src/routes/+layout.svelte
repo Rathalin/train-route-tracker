@@ -15,7 +15,7 @@
 	const unsubscribe = themeStore.subscribe((value) => {
 		if (browser) {
 			document.body.setAttribute(themeDataAttribute, value.theme)
-			document.cookie = `${themeCookieKey}=${value.theme}; path=/`
+			document.cookie = `${themeCookieKey}=${value.theme};path=/;SameSite=Strict`
 		}
 	})
 
@@ -33,7 +33,7 @@
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<a href="/" class="transition duration-10l0 hover:scale-105">
-					<strong class="text-xl uppercase">TRAIN ROUTES</strong>
+					<strong class="text-xl uppercase">Train Routes</strong>
 				</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">

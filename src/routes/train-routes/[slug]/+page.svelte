@@ -8,7 +8,7 @@
 
 	export let data
 
-	let lastSelectedIndex = 0
+	let lastSelectedIndex = 1
 
 	function getWaypointProgress(index: number, max: number) {
 		if (index < max) {
@@ -31,14 +31,14 @@
 	</h1>
 
 	<div class="table-container">
-		<table class="table table-hover max-w-4xl mb-10">
+		<table class="table table-hover mb-10">
 			<thead>
 				<tr>
 					<th class="w-10">{$_('page.train-routes.table.progress')}</th>
 					<th class="table-cell-fit">{$_('page.train-routes.table.kilometer')}</th>
 					<th class="table-cell-fit"></th>
 					<th>{$_('page.train-routes.table.waypoint')}</th>
-					<th>{$_('page.train-routes.table.notes')}</th>
+					<th class="w-1/2">{$_('page.train-routes.table.notes')}</th>
 				</tr>
 			</thead>
 			{#each data.waypoints as waypoint}
