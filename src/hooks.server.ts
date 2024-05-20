@@ -11,7 +11,6 @@ import {
 const theming = (async ({ event, resolve }) => {
 	let theme = event.cookies.get(themeCookieKey)
 	if (theme == null) {
-		event.cookies.set(themeCookieKey, defaultTheme, { path: '/' })
 		theme = defaultTheme
 	}
 	let colorScheme = event.cookies.get(colorSchemeCookieKey)
