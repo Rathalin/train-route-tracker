@@ -15,7 +15,7 @@
 	const unsubscribe = themeStore.subscribe((value) => {
 		if (browser) {
 			document.body.setAttribute(themeDataAttribute, value.theme)
-			document.cookie = `${themeCookieKey}=${value.theme};path=/`
+			document.cookie = `${themeCookieKey}=${value.theme}; path=/`
 		}
 	})
 

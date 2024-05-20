@@ -14,8 +14,8 @@ export const themeOptions = [
 export type ThemeOption = (typeof themeOptions)[number]
 export type ColorScheme = 'dark' | 'light'
 
-export const defaultTheme: ThemeOption = 'my custom theme'
-export const defaultColorScheme: ColorScheme = 'dark'
+export const defaultTheme = 'my custom theme' satisfies ThemeOption
+export const defaultColorScheme = 'dark' satisfies ColorScheme
 
 export const themeCookieKey = 'theme'
 export const colorSchemeCookieKey = 'color-scheme'
