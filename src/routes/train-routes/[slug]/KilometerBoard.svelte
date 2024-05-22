@@ -2,7 +2,7 @@
 	export let kilometer: number
 
 	$: integer = Math.floor(kilometer)
-	$: decimal = (kilometer - integer).toFixed(3).slice(2)
+	$: decimal = (kilometer - integer).toFixed(1).slice(2)
 </script>
 
 <div class="flex flex-row gap-1 items-center justify-end whitespace-pre font-mono">

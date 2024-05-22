@@ -52,7 +52,7 @@
 				}
 			}}
 		>
-			<button class="btn variant-filled-primary">
+			<button class="btn variant-filled-primary" disabled>
 				{#if seedDbAction.isLoading}
 					<CircularProgress />
 				{:else}

@@ -14,6 +14,7 @@ model Route {
   id        Int        @id @default(autoincrement())
   shortName String     @unique
   title     String
+  direction String     @default("asc")
   waypoints Waypoint[]
 }
 
