@@ -1,5 +1,3 @@
-import { error } from '@sveltejs/kit'
-
 export async function load({ params, locals: { db } }) {
 	const routeId = params.slug
 
@@ -15,10 +13,6 @@ export async function load({ params, locals: { db } }) {
 			},
 		},
 	})
-
-	if (route == null) {
-		return error(404, 'Route not found')
-	}
 
 	return {
 		route,

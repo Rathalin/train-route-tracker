@@ -21,12 +21,10 @@
 				}
 			}
 		},
-		"traine-routes": {
+		"train-routes": {
 			"h1": {
 				"text": "Streckenplan für {routeName}"
-			}
-		},
-		"train-routes": {
+			},
 			"table": {
 				"kilometer": "Kilometer",
 				"waypoint": "Wegpunkt",
@@ -34,6 +32,11 @@
 				"icon": "Icon",
 				"progress": "Fortschritt",
 				"notes": "Notiz"
+			},
+			"error": {
+				"route-not-found": {
+					"message": "Diese Zugroute existiert nicht."
+				}
 			}
 		},
 		"home": {
@@ -67,5 +70,8 @@
 				}
 			}
 		}
+	},
+	"common": {
+		"home": "Home"
 	}
 }
