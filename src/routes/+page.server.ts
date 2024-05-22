@@ -1,4 +1,8 @@
-import type { Actions } from './$types'
+export async function load({ locals: { db } }) {
+	return {
+		routes: await db.route.findMany(),
+	}
+}
 
 export const actions = {
 	seedDb: async ({ locals }) => {
@@ -222,4 +226,4 @@ export const actions = {
 			}
 		}
 	},
-} satisfies Actions
+}

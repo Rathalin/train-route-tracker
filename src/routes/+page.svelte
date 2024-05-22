@@ -6,6 +6,7 @@
 	import { getToastStore } from '@skeletonlabs/skeleton'
 	import { _ } from 'svelte-i18n'
 
+	export let data
 	export let form
 
 	let seedDbAction = { isLoading: false }
@@ -33,8 +34,10 @@
 		<span>{$_('page.home.h1.text')}</span>
 	</h1>
 
-	<article class="mb-10">
-		<a class="underline" href="/train-routes/wrn-mrz">{'Wiener Neustadt -> Mürzzuschlag'}</a>
+	<article class="mb-10 flex flex-col gap-2">
+		{#each data.routes as route}
+			<a class="underline" href={`/train-routes/${route.shortName}`}>{route.title}</a>
+		{/each}
 	</article>
 
 	<article>
