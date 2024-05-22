@@ -22,12 +22,12 @@
 </script>
 
 <svelte:head>
-	<title>{data.title}</title>
+	<title>{data.route.title}</title>
 </svelte:head>
 
 <div class="mx-4 mt-4 flow-root">
 	<h1 class="h1 mt-4 mb-10">
-		{$_('page.traine-routes.h1.text', { values: { routeName: data.title } })}
+		{$_('page.traine-routes.h1.text', { values: { routeName: data.route.title } })}
 	</h1>
 
 	<div class="table-container">
@@ -41,7 +41,7 @@
 					<th class="w-1/2">{$_('page.train-routes.table.notes')}</th>
 				</tr>
 			</thead>
-			{#each data.waypoints as waypoint}
+			{#each data.route.waypoints as waypoint}
 				<tr
 					class="table-row hover:text-white hover:bg-secondary-500 cursor-pointer {waypoint.id ===
 					lastSelectedIndex
@@ -57,20 +57,12 @@
 						</span>
 					</td>
 					<TableColumn><KilometerBoard kilometer={waypoint.kilometer} /></TableColumn>
-					{#if waypoint.data.type === 'speed-increase'}
-						<SpeedWaypoint
-							speed={waypoint.data.speed}
-							speedChange={'increase'}
-							notes={waypoint.notes}
-						/>
-					{:else if waypoint.data.type === 'speed-decrease'}
-						<SpeedWaypoint
-							speed={waypoint.data.speed}
-							speedChange={'decrease'}
-							notes={waypoint.notes}
-						/>
-					{:else if waypoint.data.type === 'station'}
-						<StationWaypoint stationName={waypoint.data.name} notes={waypoint.notes} />
+					{#if waypoint.type === 'speed-increase'}
+						<SpeedWaypoint speedChange={'increase'} text={waypoint.text} notes={waypoint.notes} />
+					{:else if waypoint.type === 'speed-decrease'}
+						<SpeedWaypoint speedChange={'decrease'} text={waypoint.text} notes={waypoint.notes} />
+					{:else if waypoint.type === 'station'}
+						<StationWaypoint stationName={waypoint.text} notes={waypoint.notes} />
 					{:else}
 						<div>TODO</div>
 					{/if}

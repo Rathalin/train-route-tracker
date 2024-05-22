@@ -10,19 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Route {
-  id        Int      @id @default(autoincrement())
+  id        Int        @id @default(autoincrement())
+  shortName String     @unique
   title     String
   waypoints Waypoint[]
 }
 
 model Waypoint {
-  id         Int      @id @default(autoincrement())
-  kilometer  Float
-  type       String
-  text       String
-  notes      String
-  route      Route    @relation(fields: [routeId], references: [id])
-  routeId    Int
+  id        Int    @id @default(autoincrement())
+  kilometer Float
+  type      String
+  text      String
+  notes     String
+  route     Route  @relation(fields: [routeId], references: [id])
+  routeId   Int
 }

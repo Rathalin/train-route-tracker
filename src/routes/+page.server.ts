@@ -7,6 +7,7 @@ export const actions = {
 			await locals.db.route.deleteMany()
 			await locals.db.route.create({
 				data: {
+					shortName: 'wrn-mrz',
 					title: 'Wiener Neustadt - Mürzzuschlag',
 					waypoints: {
 						createMany: {

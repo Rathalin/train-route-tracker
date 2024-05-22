@@ -3,8 +3,8 @@
 	import SpeedometerIcon from 'svelte-material-icons/Speedometer.svelte'
 	import SpeedometerSlowIcon from 'svelte-material-icons/SpeedometerSlow.svelte'
 
-	export let speed: number
 	export let speedChange: 'increase' | 'decrease'
+	export let text: string
 	export let notes: string
 </script>
 
@@ -15,5 +15,5 @@
 		<span class="text-error-400"><SpeedometerSlowIcon /></span>
 	{/if}
 </TableColumn>
-<TableColumn><span>{speed}</span></TableColumn>
+<TableColumn><span>{text}</span></TableColumn>
 <TableColumn><span>{notes}</span></TableColumn>
