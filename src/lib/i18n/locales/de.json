@@ -40,6 +40,16 @@
 			"title": "Routen",
 			"h1": {
 				"text": "Routenpläne"
+			},
+			"action": {
+				"seed-db": {
+					"success": {
+						"message": "Datenbank geseedet"
+					},
+					"error": {
+						"message": "Datenbank konnte nicht geseedet werden"
+					}
+				}
 			}
 		}
 	},

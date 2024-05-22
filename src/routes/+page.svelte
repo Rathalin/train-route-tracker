@@ -1,6 +1,27 @@
 <script lang="ts">
+	import { enhance } from '$app/forms'
 	import { invalidateAll } from '$app/navigation'
+	import CircularProgress from '$lib/components/icon/CircularProgress.svelte'
+	import CreationIcon from 'svelte-material-icons/Creation.svelte'
+	import { getToastStore } from '@skeletonlabs/skeleton'
 	import { _ } from 'svelte-i18n'
+
+	export let form
+
+	let seedDbAction = { isLoading: false }
+
+	const toastStore = getToastStore()
+	$: if (form?.seedDb.success) {
+		toastStore.trigger({
+			message: $_('page.home.action.seed-db.success.message'),
+			background: 'variant-filled-success',
+		})
+	} else if (form?.seedDb.error) {
+		toastStore.trigger({
+			message: $_('page.home.action.seed-db.error.message'),
+			background: 'variant-filled-error',
+		})
+	}
 </script>
 
 <svelte:head>
@@ -14,6 +35,29 @@
 
 	<article class="mb-10">
 		<a class="underline" href="/train-routes/wrn-mrz">{'Wiener Neustadt -> Mürzzuschlag'}</a>
+	</article>
+
+	<article>
+		<form
+			action="?/seedDb"
+			method="post"
+			use:enhance={() => {
+				seedDbAction.isLoading = true
+				return async ({ update }) => {
+					await update()
+					seedDbAction.isLoading = false
+				}
+			}}
+		>
+			<button class="btn variant-filled-primary">
+				{#if seedDbAction.isLoading}
+					<CircularProgress />
+				{:else}
+					<CreationIcon />
+				{/if}
+				<span>Seed DB</span>
+			</button>
+		</form>
 	</article>
 </div>
 

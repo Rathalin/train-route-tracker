@@ -40,6 +40,16 @@
 			"title": "Routes",
 			"h1": {
 				"text": "Route plans"
+			},
+			"action": {
+				"seed-db": {
+					"success": {
+						"message": "Database seeded"
+					},
+					"error": {
+						"message": "Database could not be seeded"
+					}
+				}
 			}
 		}
 	},

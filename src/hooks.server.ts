@@ -7,6 +7,7 @@ import {
 	defaultTheme,
 	themeCookieKey,
 } from './theme.settings'
+import { getGlobalDb } from '$lib/db'
 
 const theming = (async ({ event, resolve }) => {
 	let theme = event.cookies.get(themeCookieKey)
@@ -26,6 +27,11 @@ const theming = (async ({ event, resolve }) => {
 	})
 }) satisfies Handle
 
+const initDatabase = (async ({ event, resolve }) => {
+	event.locals.db = getGlobalDb()
+	return resolve(event)
+}) satisfies Handle
+
 const i18n = (async ({ event, resolve }) => {
 	const lang = event.request.headers.get('accept-language')?.split(',')[0]
 	if (lang) {
@@ -34,4 +40,4 @@ const i18n = (async ({ event, resolve }) => {
 	return resolve(event)
 }) satisfies Handle
 
-export const handle = sequence(i18n, theming)
+export const handle = sequence(i18n, theming, initDatabase)
