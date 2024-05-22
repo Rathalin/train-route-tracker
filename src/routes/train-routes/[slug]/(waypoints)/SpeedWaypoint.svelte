@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TableColumn from './TableColumn.svelte'
+	import TableColumn from '../(lib)/TableColumn.svelte'
 	import SpeedometerIcon from 'svelte-material-icons/Speedometer.svelte'
 	import SpeedometerSlowIcon from 'svelte-material-icons/SpeedometerSlow.svelte'
 

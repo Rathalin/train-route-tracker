@@ -37,6 +37,11 @@
 				"route-not-found": {
 					"message": "This trainroute does not exist."
 				}
+			},
+			"waypoint-type": {
+				"neutral-section": {
+					"label": "Neutral section"
+				}
 			}
 		},
 		"home": {

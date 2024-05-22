@@ -12,14 +12,19 @@ export async function load({ params, locals: { db } }) {
 		}
 	}
 
-	const waypoints = await db.waypoint.findMany({
-		where: {
-			routeId: route.id,
-		},
-		orderBy: {
-			kilometer: route.direction === 'asc' ? 'asc' : 'desc',
-		},
-	})
+	const waypoints = (
+		await db.waypoint.findMany({
+			where: {
+				routeId: route.id,
+			},
+			orderBy: {
+				kilometer: route.direction === 'asc' ? 'asc' : 'desc',
+			},
+		})
+	).map((waypoint, i) => ({
+		...waypoint,
+		id: i,
+	}))
 
 	return {
 		route: {

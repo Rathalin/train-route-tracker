@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TableColumn from './TableColumn.svelte'
+	import TableColumn from '../(lib)/TableColumn.svelte'
 	import OctagonIcon from 'svelte-material-icons/Octagon.svelte'
 
 	export let stationName: string

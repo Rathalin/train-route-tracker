@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n'
-	import SpeedWaypoint from './SpeedWaypoint.svelte'
-	import StationWaypoint from './StationWaypoint.svelte'
-	import TableColumn from './TableColumn.svelte'
-	import KilometerBoard from './KilometerBoard.svelte'
-	import WaypointProgress from './WaypointProgress.svelte'
+	import SpeedWaypoint from './(waypoints)/SpeedWaypoint.svelte'
+	import StationWaypoint from './(waypoints)/StationWaypoint.svelte'
+	import TableColumn from './(lib)/TableColumn.svelte'
+	import KilometerBoard from './(lib)/KilometerBoard.svelte'
+	import WaypointProgress from './(waypoints)/WaypointProgress.svelte'
 	import HomeLinkButton from '$lib/components/buttons/HomeLinkButton.svelte'
+	import NotImplementedWaypoint from './(waypoints)/NotImplementedWaypoint.svelte'
+	import NeutralSectionWaypoint from './(waypoints)/NeutralSectionWaypoint.svelte'
 
 	export let data
 
@@ -65,8 +67,10 @@
 							<SpeedWaypoint speedChange={'decrease'} text={waypoint.text} notes={waypoint.notes} />
 						{:else if waypoint.type === 'station'}
 							<StationWaypoint stationName={waypoint.text} notes={waypoint.notes} />
+						{:else if waypoint.type === 'neutral-section'}
+							<NeutralSectionWaypoint notes={waypoint.notes} />
 						{:else}
-							<div>TODO</div>
+							<NotImplementedWaypoint typeName={waypoint.type} />
 						{/if}
 					</tr>
 				{/each}
