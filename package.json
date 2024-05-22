@@ -16,7 +16,8 @@
 		"migrate": "prisma migrate deploy",
 		"migrate-dev": "prisma migrate dev",
 		"studio": "prisma studio",
-		"generate": "prisma generate"
+		"generate": "prisma generate",
+		"postinstall": "prisma generate"
 	},
 	"devDependencies": {
 		"@skeletonlabs/skeleton": "2.7.1",
