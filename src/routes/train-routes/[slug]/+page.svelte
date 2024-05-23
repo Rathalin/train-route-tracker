@@ -11,7 +11,7 @@
 
 	export let data
 
-	let lastSelectedIndex = 1
+	let currentWaypointIndex = 0
 
 	function getWaypointProgress(index: number, max: number) {
 		if (index < max) {
@@ -47,17 +47,23 @@
 				</thead>
 				{#each data.route.waypoints as waypoint}
 					<tr
-						class="table-row hover:text-white hover:bg-secondary-500 cursor-pointer {waypoint.id ===
-						lastSelectedIndex
+						class="table-row hover:text-white hover:bg-secondary-500 cursor-pointer {getWaypointProgress(
+							waypoint.id,
+							currentWaypointIndex,
+						) === 'current'
 							? 'bg-secondary-800'
-							: ''} {waypoint.id < lastSelectedIndex ? 'text-surface-500' : ''}"
+							: ''} {getWaypointProgress(waypoint.id, currentWaypointIndex) === 'passed'
+							? 'text-surface-500'
+							: ''}"
 						on:click={() => {
-							lastSelectedIndex = waypoint.id
+							currentWaypointIndex = waypoint.id
 						}}
 					>
 						<td>
 							<span class="flex flex-row justify-center">
-								<WaypointProgress progress={getWaypointProgress(waypoint.id, lastSelectedIndex)} />
+								<WaypointProgress
+									progress={getWaypointProgress(waypoint.id, currentWaypointIndex)}
+								/>
 							</span>
 						</td>
 						<TableColumn><KilometerBoard kilometer={waypoint.kilometer} /></TableColumn>
