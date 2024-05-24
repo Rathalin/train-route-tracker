@@ -2,14 +2,15 @@
 	import TableColumn from '../(lib)/TableColumn.svelte'
 	import OctagonIcon from 'svelte-material-icons/Octagon.svelte'
 	import { _ } from 'svelte-i18n'
+	import type { ProgressState } from '../ProgressState'
 
 	export let stationName: string
-	export let passed: boolean
+	export let progress: ProgressState
 </script>
 
 <TableColumn>
 	<span
-		class={passed ? 'text-surface-500' : 'text-tertiary-400'}
+		class={progress === 'passed' ? 'text-surface-500' : 'text-tertiary-400'}
 		title={$_('page.train-routes.waypoint-type.station.icon.tooltip')}
 	>
 		<OctagonIcon />

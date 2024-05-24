@@ -9,12 +9,19 @@
 	import NeutralSectionWaypoint from './(waypoints)/NeutralSectionWaypoint.svelte'
 	import SpeedDecreaseWaypoint from './(waypoints)/SpeedDecreaseWaypoint.svelte'
 	import SpeedIncreaseWaypoint from './(waypoints)/SpeedIncreaseWaypoint.svelte'
+	import type { ProgressState } from './ProgressState'
 
 	export let data
 
 	let currentWaypointIndex = 0
 
-	function getWaypointProgress(index: number, max: number) {
+	$: waypoints =
+		data.route?.waypoints?.map((waypoint) => ({
+			progress: getWaypointProgress(waypoint.id, currentWaypointIndex) as ProgressState,
+			...waypoint,
+		})) ?? []
+
+	function getWaypointProgress(index: number, max: number): ProgressState {
 		if (index < max) {
 			return 'passed'
 		}
@@ -46,47 +53,30 @@
 						<th class="w-1/2">{$_('page.train-routes.table.notes')}</th>
 					</tr>
 				</thead>
-				{#each data.route.waypoints as waypoint}
+				{#each waypoints as waypoint}
 					<tr
-						class="table-row hover:text-white hover:bg-secondary-500 cursor-pointer {getWaypointProgress(
-							waypoint.id,
-							currentWaypointIndex,
-						) === 'current'
+						class="table-row hover:text-white hover:bg-secondary-500 cursor-pointer {waypoint.progress ===
+						'current'
 							? 'bg-secondary-800'
-							: ''} {getWaypointProgress(waypoint.id, currentWaypointIndex) === 'passed'
-							? 'text-surface-500'
-							: ''}"
+							: ''} {waypoint.progress === 'passed' ? 'text-surface-500' : ''}"
 						on:click={() => {
 							currentWaypointIndex = waypoint.id
 						}}
 					>
 						<td>
 							<span class="flex flex-row justify-center">
-								<WaypointProgress
-									progress={getWaypointProgress(waypoint.id, currentWaypointIndex)}
-								/>
+								<WaypointProgress progress={waypoint.progress} />
 							</span>
 						</td>
 						<TableColumn><KilometerBoard kilometer={waypoint.kilometer} /></TableColumn>
 						{#if waypoint.type === 'speed-increase'}
-							<SpeedIncreaseWaypoint
-								text={waypoint.text}
-								passed={getWaypointProgress(waypoint.id, currentWaypointIndex) === 'passed'}
-							/>
+							<SpeedIncreaseWaypoint text={waypoint.text} progress={waypoint.progress} />
 						{:else if waypoint.type === 'speed-decrease'}
-							<SpeedDecreaseWaypoint
-								text={waypoint.text}
-								passed={getWaypointProgress(waypoint.id, currentWaypointIndex) === 'passed'}
-							/>
+							<SpeedDecreaseWaypoint text={waypoint.text} progress={waypoint.progress} />
 						{:else if waypoint.type === 'station'}
-							<StationWaypoint
-								stationName={waypoint.text}
-								passed={getWaypointProgress(waypoint.id, currentWaypointIndex) === 'passed'}
-							/>
+							<StationWaypoint stationName={waypoint.text} progress={waypoint.progress} />
 						{:else if waypoint.type === 'neutral-section'}
-							<NeutralSectionWaypoint
-								passed={getWaypointProgress(waypoint.id, currentWaypointIndex) === 'passed'}
-							/>
+							<NeutralSectionWaypoint progress={waypoint.progress} />
 						{:else}
 							<NotImplementedWaypoint typeName={waypoint.type} />
 						{/if}
