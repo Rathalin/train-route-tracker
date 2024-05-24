@@ -69,13 +69,24 @@
 						</td>
 						<TableColumn><KilometerBoard kilometer={waypoint.kilometer} /></TableColumn>
 						{#if waypoint.type === 'speed-increase'}
-							<SpeedIncreaseWaypoint text={waypoint.text} />
+							<SpeedIncreaseWaypoint
+								text={waypoint.text}
+								passed={getWaypointProgress(waypoint.id, currentWaypointIndex) === 'passed'}
+							/>
 						{:else if waypoint.type === 'speed-decrease'}
-							<SpeedDecreaseWaypoint text={waypoint.text} />
+							<SpeedDecreaseWaypoint
+								text={waypoint.text}
+								passed={getWaypointProgress(waypoint.id, currentWaypointIndex) === 'passed'}
+							/>
 						{:else if waypoint.type === 'station'}
-							<StationWaypoint stationName={waypoint.text} />
+							<StationWaypoint
+								stationName={waypoint.text}
+								passed={getWaypointProgress(waypoint.id, currentWaypointIndex) === 'passed'}
+							/>
 						{:else if waypoint.type === 'neutral-section'}
-							<NeutralSectionWaypoint />
+							<NeutralSectionWaypoint
+								passed={getWaypointProgress(waypoint.id, currentWaypointIndex) === 'passed'}
+							/>
 						{:else}
 							<NotImplementedWaypoint typeName={waypoint.type} />
 						{/if}

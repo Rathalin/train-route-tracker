@@ -4,11 +4,12 @@
 	import { _ } from 'svelte-i18n'
 
 	export let text: string
+	export let passed: boolean
 </script>
 
 <TableColumn>
 	<span
-		class="text-error-400"
+		class={passed ? 'text-surface-500' : 'text-error-400'}
 		title={$_('page.train-routes.waypoint-type.speed-decrease.icon.tooltip')}
 	>
 		<SpeedometerSlowIcon />
