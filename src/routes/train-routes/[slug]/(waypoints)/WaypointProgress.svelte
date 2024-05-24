@@ -11,8 +11,8 @@
 {:else if progress === 'current'}
 	<div class="flex flex-col items-center">
 		<div class="w-1 h-3 bg-primary-500"></div>
-		<div class="grid my-[-0.4rem] items-center justify-items-center">
-			<div class="ringring border-primary-500"></div>
+		<div class="grid items-center justify-items-center">
+			<div class="ringring -my-10 border-primary-400"></div>
 			<div class="circle bg-primary-500"></div>
 		</div>
 		<div class="w-1 h-4 -mb-1 bg-surface-700"></div>
@@ -38,8 +38,8 @@
 	}
 
 	.ringring {
-		height: 1.8rem;
-		width: 1.8rem;
+		height: 1.9rem;
+		width: 1.9rem;
 		border-radius: 50%;
 		border-width: 3px;
 		border-style: solid;
