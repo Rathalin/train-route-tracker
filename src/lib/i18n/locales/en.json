@@ -1,26 +1,5 @@
 {
 	"page": {
-		"example": {
-			"h1": {
-				"text": "Example heading"
-			},
-			"title": "Example Page",
-			"action": {
-				"example-action": {
-					"success": {
-						"message": "Example success!"
-					},
-					"error": {
-						"message": "Example error!"
-					}
-				},
-				"example": {
-					"button": {
-						"label": "Click me"
-					}
-				}
-			}
-		},
 		"train-routes": {
 			"h1": {
 				"text": "Route plan for {routeName}"
@@ -28,8 +7,6 @@
 			"table": {
 				"kilometer": "Kilometer",
 				"waypoint": "Waypoint",
-				"description": "Description",
-				"icon": "Icon",
 				"progress": "Progress",
 				"notes": "Notes"
 			},
@@ -45,19 +22,8 @@
 			}
 		},
 		"home": {
-			"title": "Routes",
 			"h1": {
 				"text": "Route plans"
-			},
-			"action": {
-				"seed-db": {
-					"success": {
-						"message": "Database seeded"
-					},
-					"error": {
-						"message": "Database could not be seeded"
-					}
-				}
 			}
 		}
 	},

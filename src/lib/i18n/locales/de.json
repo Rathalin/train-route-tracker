@@ -1,26 +1,5 @@
 {
 	"page": {
-		"example": {
-			"h1": {
-				"text": "Beispielüberschrift"
-			},
-			"title": "Beispielseite",
-			"action": {
-				"example-action": {
-					"success": {
-						"message": "Beispielerfolg!"
-					},
-					"error": {
-						"message": "Beispielfehler!"
-					}
-				},
-				"example": {
-					"button": {
-						"label": "Klick mich"
-					}
-				}
-			}
-		},
 		"train-routes": {
 			"h1": {
 				"text": "Streckenplan für {routeName}"
@@ -28,8 +7,6 @@
 			"table": {
 				"kilometer": "Kilometer",
 				"waypoint": "Wegpunkt",
-				"description": "Beschreibung",
-				"icon": "Icon",
 				"progress": "Fortschritt",
 				"notes": "Notiz"
 			},
@@ -45,19 +22,8 @@
 			}
 		},
 		"home": {
-			"title": "Routen",
 			"h1": {
 				"text": "Routenpläne"
-			},
-			"action": {
-				"seed-db": {
-					"success": {
-						"message": "Datenbank geseedet"
-					},
-					"error": {
-						"message": "Datenbank konnte nicht geseedet werden"
-					}
-				}
 			}
 		}
 	},
