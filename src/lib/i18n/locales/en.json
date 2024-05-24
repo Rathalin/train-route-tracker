@@ -17,7 +17,25 @@
 			},
 			"waypoint-type": {
 				"neutral-section": {
-					"label": "Neutral section"
+					"label": "Neutral section",
+					"icon": {
+						"tooltip": "Neutral section"
+					}
+				},
+				"station": {
+					"icon": {
+						"tooltip": "Station"
+					}
+				},
+				"speed-increase": {
+					"icon": {
+						"tooltip": "Speed increase"
+					}
+				},
+				"speed-decrease": {
+					"icon": {
+						"tooltip": "Speed decrease"
+					}
 				}
 			}
 		},

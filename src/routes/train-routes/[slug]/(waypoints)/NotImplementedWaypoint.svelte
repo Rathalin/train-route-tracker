@@ -12,4 +12,3 @@
 	<span class="text-error-500 font-bold">{typeName}</span>
 	<span>not implemented yet!</span>
 </TableColumn>
-<TableColumn><span></span></TableColumn>

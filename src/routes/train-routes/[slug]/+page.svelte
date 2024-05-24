@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n'
-	import SpeedWaypoint from './(waypoints)/SpeedWaypoint.svelte'
 	import StationWaypoint from './(waypoints)/StationWaypoint.svelte'
 	import TableColumn from './(lib)/TableColumn.svelte'
 	import KilometerBoard from './(lib)/KilometerBoard.svelte'
-	import WaypointProgress from './(waypoints)/WaypointProgress.svelte'
+	import WaypointProgress from './(lib)/WaypointProgress.svelte'
 	import HomeLinkButton from '$lib/components/buttons/HomeLinkButton.svelte'
 	import NotImplementedWaypoint from './(waypoints)/NotImplementedWaypoint.svelte'
 	import NeutralSectionWaypoint from './(waypoints)/NeutralSectionWaypoint.svelte'
+	import SpeedDecreaseWaypoint from './(waypoints)/SpeedDecreaseWaypoint.svelte'
+	import SpeedIncreaseWaypoint from './(waypoints)/SpeedIncreaseWaypoint.svelte'
 
 	export let data
 
@@ -68,16 +69,17 @@
 						</td>
 						<TableColumn><KilometerBoard kilometer={waypoint.kilometer} /></TableColumn>
 						{#if waypoint.type === 'speed-increase'}
-							<SpeedWaypoint speedChange={'increase'} text={waypoint.text} notes={waypoint.notes} />
+							<SpeedIncreaseWaypoint text={waypoint.text} />
 						{:else if waypoint.type === 'speed-decrease'}
-							<SpeedWaypoint speedChange={'decrease'} text={waypoint.text} notes={waypoint.notes} />
+							<SpeedDecreaseWaypoint text={waypoint.text} />
 						{:else if waypoint.type === 'station'}
-							<StationWaypoint stationName={waypoint.text} notes={waypoint.notes} />
+							<StationWaypoint stationName={waypoint.text} />
 						{:else if waypoint.type === 'neutral-section'}
-							<NeutralSectionWaypoint notes={waypoint.notes} />
+							<NeutralSectionWaypoint />
 						{:else}
 							<NotImplementedWaypoint typeName={waypoint.type} />
 						{/if}
+						<TableColumn><span>{waypoint.notes}</span></TableColumn>
 					</tr>
 				{/each}
 				<tfoot class="h-1"></tfoot>

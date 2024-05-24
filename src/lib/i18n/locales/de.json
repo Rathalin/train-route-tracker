@@ -17,7 +17,25 @@
 			},
 			"waypoint-type": {
 				"neutral-section": {
-					"label": "Schutzstrecke"
+					"label": "Schutzstrecke",
+					"icon": {
+						"tooltip": "Schutzstrecke"
+					}
+				},
+				"station": {
+					"icon": {
+						"tooltip": "Station"
+					}
+				},
+				"speed-increase": {
+					"icon": {
+						"tooltip": "Geschwindigkeitserhöhung"
+					}
+				},
+				"speed-decrease": {
+					"icon": {
+						"tooltip": "Geschwindigkeitsverringerung"
+					}
 				}
 			}
 		},
