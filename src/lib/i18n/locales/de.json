@@ -6,9 +6,9 @@
 			},
 			"table": {
 				"kilometer": "Kilometer",
-				"waypoint": "Wegpunkt",
 				"progress": "Fortschritt",
-				"notes": "Notiz"
+				"notes": "Notiz",
+				"description": "Beschreibung"
 			},
 			"error": {
 				"route-not-found": {

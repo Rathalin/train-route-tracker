@@ -49,7 +49,7 @@
 						<th class="w-10">{$_('page.train-routes.table.progress')}</th>
 						<th class="table-cell-fit">{$_('page.train-routes.table.kilometer')}</th>
 						<th class="table-cell-fit"></th>
-						<th>{$_('page.train-routes.table.waypoint')}</th>
+						<th>{$_('page.train-routes.table.description')}</th>
 						<th class="w-1/2">{$_('page.train-routes.table.notes')}</th>
 					</tr>
 				</thead>
