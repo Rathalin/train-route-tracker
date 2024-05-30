@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n'
+	import EditWaypoint from './EditWaypoint.svelte'
 
 	export let data
 </script>
@@ -11,5 +12,7 @@
 </svelte:head>
 
 <div>
-	<h1>{data.route.title}</h1>
+	<h1 class="h1 mt-4 mb-10">{data.route.title}</h1>
+
+	<EditWaypoint />
 </div>

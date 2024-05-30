@@ -9,9 +9,9 @@
 	<title>{$_('route.home.h1.text')}</title>
 </svelte:head>
 
-<div class="mx-4 mt-4 flow-root">
+<div>
 	<h1 class="h1 mt-4 mb-10">
-		<span>{$_('route.[home].h1.text')}</span>
+		<span>{$_('route.home.h1.text')}</span>
 	</h1>
 
 	<article class="mb-10 flex flex-col gap-2">

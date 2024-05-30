@@ -1,16 +1,12 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n'
-	import StationWaypoint from './(waypoints)/StationWaypoint.svelte'
 	import TableColumn from './(lib)/TableColumn.svelte'
 	import KilometerBoard from './(lib)/KilometerBoard.svelte'
 	import WaypointProgress from './(lib)/WaypointProgress.svelte'
 	import HomeLinkButton from '$lib/components/buttons/HomeLinkButton.svelte'
-	import NotImplementedWaypoint from './(waypoints)/NotImplementedWaypoint.svelte'
-	import NeutralSectionWaypoint from './(waypoints)/NeutralSectionWaypoint.svelte'
-	import SpeedDecreaseWaypoint from './(waypoints)/SpeedDecreaseWaypoint.svelte'
-	import SpeedIncreaseWaypoint from './(waypoints)/SpeedIncreaseWaypoint.svelte'
 	import EditIcon from 'svelte-material-icons/Pencil.svelte'
 	import type { ProgressState } from './ProgressState'
+	import WaypointIcon from './(waypoints)/WaypointIcon.svelte'
 
 	export let data
 
@@ -38,7 +34,7 @@
 </svelte:head>
 
 {#if data.route != null}
-	<div class="mx-4 mt-4 flow-root">
+	<div>
 		<h1 class="h1 mt-4 mb-10 flex flex-row justify-between items-end gap-2 flex-wrap">
 			<span>{data.route.title}</span>
 
@@ -77,17 +73,13 @@
 							</span>
 						</td>
 						<TableColumn><KilometerBoard kilometer={waypoint.kilometer} /></TableColumn>
-						{#if waypoint.type === 'speed-increase'}
-							<SpeedIncreaseWaypoint text={waypoint.text} progress={waypoint.progress} />
-						{:else if waypoint.type === 'speed-decrease'}
-							<SpeedDecreaseWaypoint text={waypoint.text} progress={waypoint.progress} />
-						{:else if waypoint.type === 'station'}
-							<StationWaypoint stationName={waypoint.text} progress={waypoint.progress} />
-						{:else if waypoint.type === 'neutral-section'}
-							<NeutralSectionWaypoint progress={waypoint.progress} />
-						{:else}
-							<NotImplementedWaypoint typeName={waypoint.type} />
-						{/if}
+						<TableColumn>
+							<WaypointIcon
+								waypointType={waypoint.type}
+								highlighted={waypoint.progress !== 'passed'}
+							/>
+						</TableColumn>
+						<TableColumn><span>{waypoint.text}</span></TableColumn>
 						<TableColumn><span>{waypoint.notes}</span></TableColumn>
 					</tr>
 				{/each}

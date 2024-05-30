@@ -45,7 +45,21 @@
 					}
 				},
 				"edit": {
-					"title": "Edit: {route}"
+					"title": "Edit: {route}",
+					"form": {
+						"waypoint": {
+							"kilometer": {
+								"label": "Kilometer",
+								"placeholder": "42.5"
+							},
+							"description": {
+								"label": "Description"
+							},
+							"type": {
+								"label": "Type"
+							}
+						}
+					}
 				}
 			}
 		},
@@ -71,6 +85,20 @@
 		}
 	},
 	"common": {
-		"home": "Home"
+		"home": "Home",
+		"waypoint-type": {
+			"station": {
+				"name": "Station"
+			},
+			"speed-increase": {
+				"name": "Speed increase"
+			},
+			"speed-decrease": {
+				"name": "Speed decrease"
+			},
+			"neutral-section": {
+				"name": "Neutral section"
+			}
+		}
 	}
 }
