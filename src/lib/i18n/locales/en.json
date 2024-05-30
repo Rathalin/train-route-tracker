@@ -1,41 +1,51 @@
 {
-	"page": {
+	"route": {
 		"train-routes": {
-			"h1": {
-				"text": "Route plan for {routeName}"
-			},
-			"table": {
-				"kilometer": "Kilometer",
-				"progress": "Progress",
-				"notes": "Notes",
-				"description": "Description"
-			},
-			"error": {
-				"route-not-found": {
-					"message": "This trainroute does not exist."
-				}
-			},
-			"waypoint-type": {
-				"neutral-section": {
-					"label": "Neutral section",
-					"icon": {
-						"tooltip": "Neutral section"
+			"slug": {
+				"h1": {
+					"text": "Route plan for {routeName}"
+				},
+				"table": {
+					"kilometer": "Kilometer",
+					"progress": "Progress",
+					"notes": "Notes",
+					"description": "Description"
+				},
+				"error": {
+					"route-not-found": {
+						"message": "This trainroute does not exist."
 					}
 				},
-				"station": {
-					"icon": {
-						"tooltip": "Station"
+				"waypoint-type": {
+					"neutral-section": {
+						"label": "Neutral section",
+						"icon": {
+							"tooltip": "Neutral section"
+						}
+					},
+					"station": {
+						"icon": {
+							"tooltip": "Station"
+						}
+					},
+					"speed-increase": {
+						"icon": {
+							"tooltip": "Speed increase"
+						}
+					},
+					"speed-decrease": {
+						"icon": {
+							"tooltip": "Speed decrease"
+						}
 					}
 				},
-				"speed-increase": {
-					"icon": {
-						"tooltip": "Speed increase"
+				"button": {
+					"edit-route": {
+						"label": "Edit"
 					}
 				},
-				"speed-decrease": {
-					"icon": {
-						"tooltip": "Speed decrease"
-					}
+				"edit": {
+					"title": "Edit: {route}"
 				}
 			}
 		},

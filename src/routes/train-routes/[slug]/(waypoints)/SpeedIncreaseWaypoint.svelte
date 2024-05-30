@@ -11,7 +11,7 @@
 <TableColumn>
 	<span
 		class={progress === 'passed' ? 'text-surface-500' : 'text-success-400'}
-		title={$_('page.train-routes.waypoint-type.speed-increase.icon.tooltip')}
+		title={$_('route.train-routes.slug.waypoint-type.speed-increase.icon.tooltip')}
 	>
 		<SpeedometerIcon />
 	</span>

@@ -11,7 +11,7 @@
 <TableColumn>
 	<span
 		class={progress === 'passed' ? 'text-surface-500' : 'text-tertiary-400'}
-		title={$_('page.train-routes.waypoint-type.station.icon.tooltip')}
+		title={$_('route.train-routes.slug.waypoint-type.station.icon.tooltip')}
 	>
 		<OctagonIcon />
 	</span>

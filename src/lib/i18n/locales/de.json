@@ -1,47 +1,58 @@
 {
-	"page": {
+	"route": {
 		"train-routes": {
-			"h1": {
-				"text": "Streckenplan für {routeName}"
-			},
-			"table": {
-				"kilometer": "Kilometer",
-				"progress": "Fortschritt",
-				"notes": "Notiz",
-				"description": "Beschreibung"
-			},
-			"error": {
-				"route-not-found": {
-					"message": "Diese Zugroute existiert nicht."
-				}
-			},
-			"waypoint-type": {
-				"neutral-section": {
-					"label": "Schutzstrecke",
-					"icon": {
-						"tooltip": "Schutzstrecke"
+			"slug": {
+				"h1": {
+					"text": "Streckenplan für {routeName}"
+				},
+				"table": {
+					"kilometer": "Kilometer",
+					"progress": "Fortschritt",
+					"notes": "Notiz",
+					"description": "Beschreibung"
+				},
+				"error": {
+					"route-not-found": {
+						"message": "Diese Zugroute existiert nicht."
 					}
 				},
-				"station": {
-					"icon": {
-						"tooltip": "Station"
+				"waypoint-type": {
+					"neutral-section": {
+						"label": "Schutzstrecke",
+						"icon": {
+							"tooltip": "Schutzstrecke"
+						}
+					},
+					"station": {
+						"icon": {
+							"tooltip": "Station"
+						}
+					},
+					"speed-increase": {
+						"icon": {
+							"tooltip": "Geschwindigkeitserhöhung"
+						}
+					},
+					"speed-decrease": {
+						"icon": {
+							"tooltip": "Geschwindigkeitsverringerung"
+						}
 					}
 				},
-				"speed-increase": {
-					"icon": {
-						"tooltip": "Geschwindigkeitserhöhung"
+				"button": {
+					"edit-route": {
+						"label": "Bearbeiten"
 					}
 				},
-				"speed-decrease": {
-					"icon": {
-						"tooltip": "Geschwindigkeitsverringerung"
-					}
+				"edit": {
+					"title": "Bearbeiten: {route}"
 				}
 			}
 		},
 		"home": {
 			"h1": {
-				"text": "Routenpläne"
+				"text": "Routenpläne",
+				"text2": "Test"
 			}
 		}
 	},

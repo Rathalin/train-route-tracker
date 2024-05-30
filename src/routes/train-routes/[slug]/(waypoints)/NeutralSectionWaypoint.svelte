@@ -10,11 +10,11 @@
 <TableColumn>
 	<span
 		class={progress === 'passed' ? 'text-surface-500' : 'text-blue-500'}
-		title={$_('page.train-routes.waypoint-type.neutral-section.icon.tooltip')}
+		title={$_('route.train-routes.slug.waypoint-type.neutral-section.icon.tooltip')}
 	>
 		<PauseIcon />
 	</span>
 </TableColumn>
 <TableColumn>
-	<span>{$_('page.train-routes.waypoint-type.neutral-section.label')}</span>
+	<span>{$_('route.train-routes.slug.waypoint-type.neutral-section.label')}</span>
 </TableColumn>
