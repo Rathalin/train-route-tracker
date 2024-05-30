@@ -32,5 +32,6 @@ module.exports = {
 		'unused-imports/no-unused-imports': 'error',
 		'no-unused-vars': ['error', { args: 'none', argsIgnorePattern: '^_' }],
 		'no-console': ['error', { allow: ['warn', 'error'] }],
+		'@typescript-eslint/ban-types': 'off',
 	},
 }

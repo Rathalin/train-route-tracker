@@ -7,7 +7,6 @@
 	import PauseIcon from 'svelte-material-icons/Pause.svelte'
 	import HelpIcon from 'svelte-material-icons/Help.svelte'
 
-	// eslint-disable-next-line @typescript-eslint/ban-types
 	export let waypointType: WaypointOption | (string & {})
 	export let highlighted: boolean = true
 </script>
