@@ -4,9 +4,11 @@
 	import CloseIcon from 'svelte-material-icons/Close.svelte'
 	import { createEventDispatcher } from 'svelte'
 	import { enhance } from '$app/forms'
-	import { waypointOptions } from '../(waypoints)/WaypointOption'
+	import { waypointOptions, type WaypointOption } from '../(waypoints)/WaypointOption'
 	import WaypointIcon from '../(waypoints)/WaypointIcon.svelte'
 	import WaypointText from '../(waypoints)/WaypointText.svelte'
+
+	let selectedType: WaypointOption
 
 	const dispatch = createEventDispatcher<{
 		cancel: undefined
@@ -55,9 +57,15 @@
 			</span>
 			<div class="input-group input-group-divider grid-cols-[auto_1fr_auto]">
 				<div class="input-group-shim">
-					<WaypointIcon waypointType={''} />
+					<WaypointIcon waypointType={selectedType} />
 				</div>
-				<select class="select rounded-l-none" name="waypointType" form="createForm" required>
+				<select
+					class="select rounded-l-none"
+					name="waypointType"
+					form="createForm"
+					required
+					bind:value={selectedType}
+				>
 					{#each waypointOptions as waypointOption}
 						<option value={waypointOption}>
 							<WaypointText waypointType={waypointOption} />
