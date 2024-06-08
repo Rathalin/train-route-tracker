@@ -6,7 +6,9 @@
 	import { waypointOptions, type WaypointOption } from '../(waypoints)/WaypointOption'
 	import { createEventDispatcher } from 'svelte'
 	import WaypointTypeTranslation from '../(waypoints)/WaypointText.svelte'
+	import { enhance } from '$app/forms'
 
+	export let id: number
 	export let kilometer: number | null
 	export let selectedType: WaypointOption | (string & {}) | null
 	export let text: string
@@ -23,12 +25,21 @@
 
 <tr>
 	<td>
-		<button class="btn btn-icon btn-icon-sm variant-filled" on:click={onCancelClick}>
-			<CloseIcon />
-		</button>
-		<button class="btn btn-icon btn-icon-sm variant-filled-success" type="submit">
-			<CheckIcon />
-		</button>
+		<span class="flex flex-row items-center gap-2">
+			<button class="btn btn-icon btn-icon-sm variant-ghost" on:click={onCancelClick}>
+				<CloseIcon />
+			</button>
+			<form action="?/update" method="post" use:enhance>
+				<button
+					class="btn btn-icon btn-icon-sm variant-ghost-primary"
+					type="submit"
+					name="id"
+					value={id}
+				>
+					<CheckIcon />
+				</button>
+			</form>
+		</span>
 	</td>
 
 	<td>

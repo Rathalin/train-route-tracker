@@ -1,4 +1,5 @@
-import { error } from '@sveltejs/kit'
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library'
+import { error, fail } from '@sveltejs/kit'
 import { z } from 'zod'
 
 export async function load({ params, locals: { db } }) {
@@ -35,17 +36,50 @@ export async function load({ params, locals: { db } }) {
 	}
 }
 
-
 export const actions = {
-	updateWaypoint: async ({ request, locals: { db } }) => {
-    const formData = await request.formData()
+	update: async ({ request, locals: { db } }) => {
+		const {
+			success,
+			error: zodError,
+			data,
+		} = z
+			.object({
+				id: z.number(),
+				lat: z.string(),
+				lon: z.string(),
+				kilometer: z.string(),
+				name: z.string(),
+			})
+			.safeParse(Object.fromEntries(await request.formData()))
+	},
 
-		const formSchema = z.object({
-			id: z.number(),
-			lat: z.string(),
-			lon: z.string(),
-			kilometer: z.string(),
-			name: z.string(),
-		})
+	delete: async ({ request, locals: { db } }) => {
+		const {
+			success,
+			error: zodError,
+			data: waypointId,
+		} = z.number().safeParse(Object.fromEntries(await request.formData()))
+
+		if (!success) {
+			console.log(zodError.message)
+			return fail(400, { error: zodError.message })
+		}
+
+		try {
+			console.log('Deleting', waypointId)
+			// await db.waypoint.delete({
+			// 	where: {
+			// 		id: waypointId,
+			// 	},
+			// })
+		} catch (e) {
+			if (e instanceof PrismaClientKnownRequestError) {
+				if (e.code === 'P2002') {
+					return fail(400, {
+						type: 'duplicateEntry',
+					})
+				}
+			}
+		}
 	},
 }

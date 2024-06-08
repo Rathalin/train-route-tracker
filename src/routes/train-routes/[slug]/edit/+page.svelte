@@ -48,7 +48,14 @@
 		<tbody>
 			{#each data.route.waypoints as { id, kilometer, type, text, notes } (id)}
 				{#if id === editId}
-					<EditWaypoint {kilometer} selectedType={type} {text} {notes} on:cancel={handleCancel} />
+					<EditWaypoint
+						{id}
+						{kilometer}
+						selectedType={type}
+						{text}
+						{notes}
+						on:cancel={handleCancel}
+					/>
 				{:else}
 					<ShowWaypoint {id} {kilometer} waypointType={type} {text} {notes} on:edit={handleEdit} />
 				{/if}
@@ -56,4 +63,3 @@
 		</tbody>
 	</table>
 </div>
-<!-- <form action="?/updateWaypoint"> -->
