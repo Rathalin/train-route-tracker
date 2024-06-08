@@ -1,24 +1,31 @@
 <script lang="ts">
 	import { invalidateAll } from '$app/navigation'
-	import { _ } from 'svelte-i18n'
+	import { t } from 'svelte-i18n'
 
 	export let data
 </script>
 
 <svelte:head>
-	<title>{$_('route.home.h1.text')}</title>
+	<title>{$t('route.home.h1.text')}</title>
 </svelte:head>
 
 <div>
-	<h1 class="h1 mt-4 mb-10">
-		<span>{$_('route.home.h1.text')}</span>
+	<h1 class="h2 mt-4 mb-10">
+		<span>{$t('route.home.h1.text')}</span>
 	</h1>
 
 	<article class="mb-10 flex flex-col gap-2">
-		{#each data.routes as route}
-			<a class="underline" href={`/train-routes/${route.shortName}`}>{route.title}</a>
-		{/each}
+		<ul class="list-nav">
+			{#each data.routes as route}
+				<li>
+					<a href={`/train-routes/${route.shortName}`}>
+						<span class="badge variant-ghost-primary uppercase font-mono tracking-wider">
+							{route.shortName}
+						</span>
+						<span>{route.title}</span>
+					</a>
+				</li>
+			{/each}
+		</ul>
 	</article>
 </div>
-
-<svelte:window on:focus={() => invalidateAll()} />

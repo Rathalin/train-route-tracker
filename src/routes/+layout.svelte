@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ThemeMenu from '$lib/components/ThemeSelector.svelte'
+	import ThemeMenu from '$lib/components/ThemeMenu.svelte'
 	import '../app.postcss'
 	import { AppShell, AppBar, Toast } from '@skeletonlabs/skeleton'
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom'
@@ -27,7 +27,7 @@
 <Toast />
 
 <!-- App Shell -->
-<AppShell>
+<AppShell slotPageHeader="blur-sm">
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
 		<AppBar>

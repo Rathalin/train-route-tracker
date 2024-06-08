@@ -9,7 +9,8 @@
 					"kilometer": "Kilometer",
 					"progress": "Fortschritt",
 					"notes": "Notiz",
-					"description": "Beschreibung"
+					"description": "Beschreibung",
+					"type": "Typ"
 				},
 				"error": {
 					"route-not-found": {
@@ -57,8 +58,19 @@
 							},
 							"type": {
 								"label": "Art"
+							},
+							"note": {
+								"label": "Notiz"
 							}
 						}
+					},
+					"button": {
+						"back": {
+							"label": "Zurück"
+						}
+					},
+					"table": {
+						"actions": "Aktionen"
 					}
 				}
 			}
