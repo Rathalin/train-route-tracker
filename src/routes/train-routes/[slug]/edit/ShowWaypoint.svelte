@@ -27,7 +27,7 @@
 	}
 </script>
 
-<tr class="text-surface-300" on:dblclick={onEditClick}>
+<tr class="text-surface-700 dark:text-surface-300" on:dblclick={onEditClick}>
 	<td class="flex flex-row items-center gap-2 min-h-[70px]">
 		<button class="btn btn-icon btn-icon-sm variant-ghost" on:click={onEditClick}>
 			<EditIcon />

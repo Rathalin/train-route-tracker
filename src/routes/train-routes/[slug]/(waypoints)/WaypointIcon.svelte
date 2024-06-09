@@ -13,28 +13,36 @@
 
 {#if waypointType === 'speed-increase'}
 	<span
-		class={highlighted ? 'text-success-400' : 'text-surface-500'}
+		class={highlighted
+			? 'text-success-800 dark:text-success-400'
+			: 'text-surface-300 dark:text-surface-500'}
 		title={$t('common.waypoint-type.speed-increase.name')}
 	>
 		<SpeedometerIcon />
 	</span>
 {:else if waypointType === 'speed-decrease'}
 	<span
-		class={highlighted ? 'text-error-400' : 'text-surface-500'}
+		class={highlighted
+			? 'text-error-700 dark:text-error-400'
+			: 'text-surface-300 dark:text-surface-500'}
 		title={$t('common.waypoint-type.speed-decrease.name')}
 	>
 		<SpeedometerSlowIcon />
 	</span>
 {:else if waypointType === 'station'}
 	<span
-		class={highlighted ? 'text-tertiary-400' : 'text-surface-500'}
+		class={highlighted
+			? 'text-tertiary-800 dark:text-tertiary-400'
+			: 'text-surface-300 dark:text-surface-500'}
 		title={$t('common.waypoint-type.station.name')}
 	>
 		<OctagonIcon />
 	</span>
 {:else if waypointType === 'neutral-section'}
 	<span
-		class={highlighted ? 'text-blue-500' : 'text-surface-500'}
+		class={highlighted
+			? 'text-[#223dec] dark:text-blue-500'
+			: 'text-surface-300 dark:text-surface-500'}
 		title={$t('common.waypoint-type.neutral-section.name')}
 	>
 		<PauseIcon />

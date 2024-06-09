@@ -59,14 +59,12 @@
 				</thead>
 				<tbody>
 					{#each waypoints as waypoint}
-						<!-- class="hover:text-white hover:bg-secondary-500 cursor-pointer {waypoint.progress ===
-						'current'
-							? 'bg-secondary-800'
-							: ''} {waypoint.progress === 'passed' ? 'text-surface-500' : ''}" -->
 						<tr
 							class="{waypoint.progress === 'current'
 								? 'table-row-checked'
-								: ''} {waypoint.progress === 'passed' ? 'text-surface-500' : ''}"
+								: ''} {waypoint.progress === 'passed'
+								? 'text-surface-300 dark:text-surface-500'
+								: ''}"
 							on:click={() => {
 								currentWaypointIndex = waypoint.id
 							}}

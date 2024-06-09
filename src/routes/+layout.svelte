@@ -42,7 +42,7 @@
 		</AppBar>
 	</svelte:fragment>
 	<!-- Page Route Content -->
-	<main class="container mx-auto mt-10">
+	<main class="container mt-10 px-2 md:px-4">
 		<slot />
 	</main>
 	<svelte:fragment slot="footer"></svelte:fragment>
