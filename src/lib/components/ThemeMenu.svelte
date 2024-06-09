@@ -23,7 +23,10 @@
 		option === $themeStore.theme ? '!bg-primary-500' : ''
 </script>
 
-<button class="btn btn-sm variant-ghost" use:popup={popupSettings}>
+<button
+	class="btn btn-sm variant-ghost text-surface-600 dark:text-surface-300"
+	use:popup={popupSettings}
+>
 	<span><PaletteIcon /></span>
 	<span>{$t('header.theme-selector.button.label')}</span>
 </button>

@@ -39,9 +39,12 @@
 			<span>{data.route.title}</span>
 
 			<div class="flex flex-row items-center flew-wrap">
-				<a href="/train-routes/{data.route.shortName}/edit" class="btn variant-ghost-primary">
+				<a
+					href="/train-routes/{data.route.shortName}/edit"
+					class="btn-icon variant-soft-secondary"
+					title={$t('route.train-routes.slug.button.edit-route.label')}
+				>
 					<PencilIcon />
-					<span>{$t('route.train-routes.slug.button.edit-route.label')}</span>
 				</a>
 			</div>
 		</h1>

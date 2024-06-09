@@ -71,6 +71,9 @@
 					},
 					"table": {
 						"actions": "Aktionen"
+					},
+					"heading": {
+						"edit": "Bearbeiten von"
 					}
 				}
 			}
@@ -112,6 +115,14 @@
 			"neutral-section": {
 				"name": "Schutzstrecke"
 			}
+		},
+		"action": {
+			"error": {
+				"message": "Ein Fehler ist aufgetreten"
+			}
+		},
+		"app": {
+			"name": "Routenplaner"
 		}
 	}
 }

@@ -14,8 +14,6 @@
 	export let text: string
 	export let notes: string
 
-	let isLoading = false
-
 	const dispatch = createEventDispatcher<{
 		cancel: undefined
 	}>()
@@ -32,18 +30,7 @@
 			>
 				<CloseIcon />
 			</button>
-			<form
-				id="updateForm"
-				action="?/update"
-				method="post"
-				use:enhance={() => {
-					isLoading = true
-					return async ({ update }) => {
-						await update()
-						isLoading = false
-					}
-				}}
-			>
+			<form id="updateForm" action="?/update" method="post" use:enhance>
 				<button
 					class="btn btn-icon btn-icon-sm variant-ghost-primary"
 					type="submit"

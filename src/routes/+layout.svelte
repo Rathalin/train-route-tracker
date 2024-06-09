@@ -8,6 +8,8 @@
 	import { themeCookieKey, themeDataAttribute } from '../theme.settings'
 	import { onDestroy } from 'svelte'
 	import { initializeStores, storePopup } from '@skeletonlabs/skeleton'
+	import TrainIcon from 'svelte-material-icons/Train.svelte'
+	import { t } from 'svelte-i18n'
 
 	initializeStores()
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow })
@@ -32,8 +34,12 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<a href="/" class="transition duration-10l0 hover:scale-105">
-					<strong class="text-xl uppercase">Train Routes</strong>
+				<a
+					href="/"
+					class="transition duration-10l0 hover:scale-105 flex flex-row items-start gap-1 text-surface-600 dark:text-surface-300"
+				>
+					<TrainIcon size="1.6rem" />
+					<span class="text-lg uppercase font-heading-token">{$t('common.app.name')}</span>
 				</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">

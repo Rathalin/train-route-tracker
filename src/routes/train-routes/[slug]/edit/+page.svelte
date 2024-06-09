@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { t } from 'svelte-i18n'
+	import { getToastStore } from '@skeletonlabs/skeleton'
 	import ShowWaypoint from './ShowWaypoint.svelte'
-	import PencilIcon from 'svelte-material-icons/Pencil.svelte'
+	import PencilIcon from 'svelte-material-icons/ArrowLeft.svelte'
 	import EditWaypoint from './EditWaypoint.svelte'
 	import AddWaypoint from './AddWaypoint.svelte'
 	import AddRow from './AddRow.svelte'
@@ -12,8 +13,14 @@
 	let editId: number | null = null
 	let add: boolean = false
 
+	const toastStore = getToastStore()
 	$: if (form?.update?.success === true) {
 		editId = null
+	} else if (form?.error != null) {
+		toastStore.trigger({
+			message: $t('common.action.error.message'),
+			background: 'variant-filled-error',
+		})
 	}
 </script>
 
@@ -26,13 +33,21 @@
 <div>
 	<h1 class="h2 mt-4 mb-10 flex flex-row justify-between items-end gap-2 flex-wrap">
 		<div class="flex flex-row gap-10">
-			<span>{data.route.title}</span>
+			<div>
+				<div class="text-surface-300 font-light uppercase text-sm">
+					{$t('route.train-routes.slug.edit.heading.edit')}
+				</div>
+				<div>{data.route.title}</div>
+			</div>
 		</div>
 
 		<div class="flex flex-row items-center flew-wrap gap-4">
-			<a href="/train-routes/{data.route.shortName}" class="btn variant-ghost-primary">
+			<a
+				href="/train-routes/{data.route.shortName}"
+				class="btn-icon variant-soft-secondary"
+				title={$t('route.train-routes.slug.edit.button.back.label')}
+			>
 				<PencilIcon />
-				<span>{$t('route.train-routes.slug.edit.button.back.label')}</span>
 			</a>
 		</div>
 	</h1>

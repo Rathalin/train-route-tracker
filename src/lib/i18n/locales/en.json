@@ -71,6 +71,9 @@
 					},
 					"table": {
 						"actions": "Actions"
+					},
+					"heading": {
+						"edit": "Edit"
 					}
 				}
 			}
@@ -111,6 +114,14 @@
 			"neutral-section": {
 				"name": "Neutral section"
 			}
+		},
+		"action": {
+			"error": {
+				"message": "An error occured"
+			}
+		},
+		"app": {
+			"name": "Route planner"
 		}
 	}
 }

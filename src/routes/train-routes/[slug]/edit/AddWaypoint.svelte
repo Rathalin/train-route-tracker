@@ -19,7 +19,7 @@
 	}
 </script>
 
-<tr class="!border-b-4 !border-b-surface-500">
+<tr class="!border-b-2 !border-b-surface-500">
 	<td>
 		<span class="flex flex-row items-center gap-2">
 			<button class="btn btn-icon btn-icon-sm variant-ghost" on:click={onCancelClick}>
