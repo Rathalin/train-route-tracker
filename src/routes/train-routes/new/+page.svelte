@@ -2,8 +2,8 @@
 	import { t } from 'svelte-i18n'
 	import ArrowUpIcon from 'svelte-material-icons/ArrowUp.svelte'
 	import ArrowDownIcon from 'svelte-material-icons/ArrowDown.svelte'
-	import { directionOptions, type DirectionOption } from './directionOptions'
 	import { enhance } from '$app/forms'
+	import { directionOptions, type DirectionOption } from './(lib)/directionOptions'
 
 	let selectedDirection: DirectionOption = 'asc'
 </script>

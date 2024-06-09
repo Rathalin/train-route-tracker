@@ -1,7 +1,7 @@
 import { error, fail, redirect } from '@sveltejs/kit'
 import { z } from 'zod'
 import { zfd } from 'zod-form-data'
-import { waypointOptions } from '../(waypoints)/waypointOptions.js'
+import { waypointOptions } from '../(waypoints)/waypointOptions'
 
 export async function load({ params, locals: { db } }) {
 	const routeId = params.slug

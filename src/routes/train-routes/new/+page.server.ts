@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { zfd } from 'zod-form-data'
-import { directionOptions } from './(lib)/directionOptions.js'
 import { fail, redirect } from '@sveltejs/kit'
+import { directionOptions } from './(lib)/directionOptions'
 
 export const actions = {
 	create: async ({ request, locals: { db } }) => {
