@@ -5,7 +5,7 @@
 	import WaypointProgress from './(lib)/WaypointProgress.svelte'
 	import HomeLinkButton from '$lib/components/buttons/HomeLinkButton.svelte'
 	import PencilIcon from 'svelte-material-icons/Pencil.svelte'
-	import type { ProgressState } from './ProgressState'
+	import type { ProgressState } from './(lib)/ProgressState'
 	import WaypointIcon from './(waypoints)/WaypointIcon.svelte'
 
 	export let data

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { t } from 'svelte-i18n'
 	import { getToastStore } from '@skeletonlabs/skeleton'
-	import ShowWaypoint from './ShowWaypoint.svelte'
+	import ShowWaypoint from './(lib)/ShowWaypoint.svelte'
 	import PencilIcon from 'svelte-material-icons/ArrowLeft.svelte'
 	import DeleteIcon from 'svelte-material-icons/Delete.svelte'
-	import EditWaypoint from './EditWaypoint.svelte'
-	import AddWaypoint from './AddWaypoint.svelte'
-	import AddRow from './AddRow.svelte'
+	import EditWaypoint from './(lib)/EditWaypoint.svelte'
+	import AddWaypoint from './(lib)/AddWaypoint.svelte'
+	import AddRow from './(lib)/AddRow.svelte'
 	import { enhance } from '$app/forms'
 	import { page } from '$app/stores'
 

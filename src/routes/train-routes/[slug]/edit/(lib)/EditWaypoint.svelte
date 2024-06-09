@@ -4,29 +4,39 @@
 	import CloseIcon from 'svelte-material-icons/Close.svelte'
 	import { createEventDispatcher } from 'svelte'
 	import { enhance } from '$app/forms'
-	import { waypointOptions, type WaypointOption } from '../(waypoints)/waypointOptions'
-	import WaypointIcon from '../(waypoints)/WaypointIcon.svelte'
-	import WaypointText from '../(waypoints)/WaypointText.svelte'
+	import { waypointOptions, type WaypointOption } from '../../(waypoints)/waypointOptions'
+	import WaypointIcon from '../../(waypoints)/WaypointIcon.svelte'
+	import WaypointText from '../../(waypoints)/WaypointText.svelte'
 
-	let selectedType: WaypointOption
+	export let id: number
+	export let kilometer: number | null
+	export let selectedType: WaypointOption | (string & {}) | null
+	export let text: string
+	export let notes: string
 
 	const dispatch = createEventDispatcher<{
 		cancel: undefined
 	}>()
-
-	function onCancelClick() {
-		dispatch('cancel')
-	}
 </script>
 
-<tr class="!border-b-2 !border-b-surface-500">
+<tr>
 	<td>
 		<span class="flex flex-row items-center gap-2">
-			<button class="btn btn-icon btn-icon-sm variant-ghost" on:click={onCancelClick}>
+			<button
+				class="btn btn-icon btn-icon-sm variant-ghost"
+				on:click={() => {
+					dispatch('cancel')
+				}}
+			>
 				<CloseIcon />
 			</button>
-			<form action="?/create" method="post" use:enhance id="createForm">
-				<button class="btn btn-icon btn-icon-sm variant-ghost-primary" type="submit">
+			<form id="updateForm" action="?/update" method="post" use:enhance>
+				<button
+					class="btn btn-icon btn-icon-sm variant-ghost-primary"
+					type="submit"
+					name="id"
+					value={id}
+				>
 					<CheckIcon />
 				</button>
 			</form>
@@ -44,7 +54,8 @@
 				type="number"
 				step=".1"
 				placeholder={$t('route.train-routes.slug.edit.form.waypoint.kilometer.placeholder')}
-				form="createForm"
+				value={kilometer}
+				form="updateForm"
 				required
 			/>
 		</label>
@@ -57,14 +68,14 @@
 			</span>
 			<div class="input-group input-group-divider grid-cols-[auto_1fr_auto]">
 				<div class="input-group-shim">
-					<WaypointIcon waypointType={selectedType} />
+					<WaypointIcon waypointType={selectedType ?? ''} />
 				</div>
 				<select
 					class="select rounded-l-none"
 					name="waypointType"
-					form="createForm"
-					required
 					bind:value={selectedType}
+					form="updateForm"
+					required
 				>
 					{#each waypointOptions as waypointOption}
 						<option value={waypointOption}>
@@ -81,7 +92,7 @@
 			<span class="hidden text-sm font-semibold">
 				{$t('route.train-routes.slug.edit.form.waypoint.description.label')}
 			</span>
-			<input class="input" name="description" type="text" form="createForm" />
+			<input class="input" name="description" type="text" value={text} form="updateForm" />
 		</label>
 	</td>
 
@@ -90,7 +101,7 @@
 			<span class="hidden text-sm font-semibold">
 				{$t('route.train-routes.slug.edit.form.waypoint.note.label')}
 			</span>
-			<input class="input" name="note" type="text" form="createForm" />
+			<input class="input" name="note" type="text" value={notes} form="updateForm" />
 		</label>
 	</td>
 </tr>

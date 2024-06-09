@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { zfd } from 'zod-form-data'
-import { directionOptions } from './directionOptions.js'
+import { directionOptions } from './(lib)/directionOptions.js'
 import { fail, redirect } from '@sveltejs/kit'
 
 export const actions = {
