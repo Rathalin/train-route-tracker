@@ -76,12 +76,53 @@
 						"edit": "Bearbeiten von"
 					}
 				}
+			},
+			"new": {
+				"title": "Routenplan erstellen",
+				"heading": {
+					"text": "Neuen Routenplan erstellen"
+				},
+				"form": {
+					"title": {
+						"label": "Titel",
+						"placeholder": "Wiener Neustadt - Mürzzuschlag"
+					},
+					"shortName": {
+						"label": "Abkürzung"
+					},
+					"shortName1": {
+						"placeholder": "wrn"
+					},
+					"shortName2": {
+						"placeholder": "mrz"
+					},
+					"direction": {
+						"asc": "Aufsteigende Kilometer",
+						"desc": "Absteigende Kilometer",
+						"label": "Kilometerrichtung"
+					}
+				},
+				"button": {
+					"create": {
+						"label": "Erstellen"
+					}
+				},
+				"action": {
+					"success": {
+						"message": "Routenplan erfolgreich angelegt"
+					}
+				}
 			}
 		},
 		"home": {
 			"h1": {
 				"text": "Routenpläne",
 				"text2": "Test"
+			},
+			"button": {
+				"create": {
+					"label": "Neuen Routenplan erstellen"
+				}
 			}
 		}
 	},

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import WaypointIcon from '../(waypoints)/WaypointIcon.svelte'
-	import type { WaypointOption } from '../(waypoints)/WaypointOption'
+	import type { WaypointOption } from '../(waypoints)/waypointOptions'
 	import EditIcon from 'svelte-material-icons/Pencil.svelte'
 	import { createEventDispatcher } from 'svelte'
 	import WaypointText from '../(waypoints)/WaypointText.svelte'

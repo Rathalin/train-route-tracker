@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from 'svelte-i18n'
-	import type { WaypointOption } from './WaypointOption'
+	import type { WaypointOption } from './waypointOptions'
 	import SpeedometerIcon from 'svelte-material-icons/Speedometer.svelte'
 	import SpeedometerSlowIcon from 'svelte-material-icons/SpeedometerSlow.svelte'
 	import OctagonIcon from 'svelte-material-icons/Octagon.svelte'

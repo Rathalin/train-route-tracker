@@ -2,7 +2,7 @@ import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library'
 import { error, fail } from '@sveltejs/kit'
 import { z } from 'zod'
 import { zfd } from 'zod-form-data'
-import { waypointOptions } from '../(waypoints)/WaypointOption.js'
+import { waypointOptions } from '../(waypoints)/waypointOptions.js'
 
 export async function load({ params, locals: { db } }) {
 	const routeId = params.slug

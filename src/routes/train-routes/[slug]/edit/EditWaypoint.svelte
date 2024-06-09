@@ -4,7 +4,7 @@
 	import CloseIcon from 'svelte-material-icons/Close.svelte'
 	import { createEventDispatcher } from 'svelte'
 	import { enhance } from '$app/forms'
-	import { waypointOptions, type WaypointOption } from '../(waypoints)/WaypointOption'
+	import { waypointOptions, type WaypointOption } from '../(waypoints)/waypointOptions'
 	import WaypointIcon from '../(waypoints)/WaypointIcon.svelte'
 	import WaypointText from '../(waypoints)/WaypointText.svelte'
 

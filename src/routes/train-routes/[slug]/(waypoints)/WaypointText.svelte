@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from 'svelte-i18n'
-	import type { WaypointOption } from './WaypointOption'
+	import type { WaypointOption } from './waypointOptions'
 
 	const waypointTypes: Record<string, string> = {
 		station: $t('common.waypoint-type.station.name'),

@@ -76,11 +76,52 @@
 						"edit": "Edit"
 					}
 				}
+			},
+			"new": {
+				"title": "Create route plan",
+				"heading": {
+					"text": "Create new route plan"
+				},
+				"form": {
+					"title": {
+						"label": "Title",
+						"placeholder": "Harrow & Wealdstone - Elephant & Castle"
+					},
+					"shortName": {
+						"label": "Short name"
+					},
+					"shortName1": {
+						"placeholder": "haw"
+					},
+					"shortName2": {
+						"placeholder": "elc"
+					},
+					"direction": {
+						"asc": "Ascending kilometers",
+						"desc": "Descending kilometers",
+						"label": "Kilometer direction"
+					}
+				},
+				"button": {
+					"create": {
+						"label": "Create"
+					}
+				},
+				"action": {
+					"success": {
+						"message": "Route plan created successfully"
+					}
+				}
 			}
 		},
 		"home": {
 			"h1": {
 				"text": "Route plans"
+			},
+			"button": {
+				"create": {
+					"label": "Create new route plan"
+				}
 			}
 		}
 	},

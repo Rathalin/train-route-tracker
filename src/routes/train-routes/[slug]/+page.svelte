@@ -5,8 +5,10 @@
 	import WaypointProgress from './(lib)/WaypointProgress.svelte'
 	import HomeLinkButton from '$lib/components/buttons/HomeLinkButton.svelte'
 	import PencilIcon from 'svelte-material-icons/Pencil.svelte'
+	import DeleteIcon from 'svelte-material-icons/Delete.svelte'
 	import type { ProgressState } from './ProgressState'
 	import WaypointIcon from './(waypoints)/WaypointIcon.svelte'
+	import { enhance } from '$app/forms'
 
 	export let data
 
@@ -38,7 +40,7 @@
 		<h1 class="h2 mt-4 mb-10 flex flex-row justify-between items-end gap-2 flex-wrap">
 			<span>{data.route.title}</span>
 
-			<div class="flex flex-row items-center flew-wrap">
+			<div class="flex flex-row items-center flew-wrap gap-2">
 				<a
 					href="/train-routes/{data.route.shortName}/edit"
 					class="btn-icon variant-soft-secondary"
@@ -46,6 +48,11 @@
 				>
 					<PencilIcon />
 				</a>
+				<form action="?/delete" method="post" use:enhance>
+					<button class="btn-icon variant-soft-secondary" type="submit">
+						<DeleteIcon />
+					</button>
+				</form>
 			</div>
 		</h1>
 

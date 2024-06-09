@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { invalidateAll } from '$app/navigation'
 	import { t } from 'svelte-i18n'
 
 	export let data
@@ -28,4 +27,10 @@
 			{/each}
 		</ul>
 	</article>
+
+	<div class="flex flex-row">
+		<a href="/train-routes/new" class="btn variant-soft-primary">
+			<span>{$t('route.home.button.create.label')}</span>
+		</a>
+	</div>
 </div>
