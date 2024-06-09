@@ -11,6 +11,23 @@ export default {
 		join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}'),
 	],
 	theme: {
+		container: {
+			center: true,
+			padding: {
+				DEFAULT: '1rem',
+				sm: '2rem',
+				lg: '4rem',
+				xl: '5rem',
+			},
+			screens: {
+				DEFAULT: '100%',
+				sm: '640px',
+				md: '640px',
+				lg: '768px',
+				xl: '1024px',
+				'2xl': '1280px',
+			},
+		},
 		extend: {},
 	},
 	plugins: [

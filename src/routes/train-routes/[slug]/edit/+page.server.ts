@@ -84,7 +84,7 @@ export const actions = {
 				console.log(e.message)
 				if (e.code === 'P2002') {
 					return fail(400, {
-						type: 'duplicateEntry',
+						type: 'duplicate-key',
 					})
 				}
 			}
@@ -134,7 +134,7 @@ export const actions = {
 				console.log(e.message)
 				if (e.code === 'P2002') {
 					return fail(400, {
-						type: 'duplicateEntry',
+						type: 'duplicate-key',
 					})
 				}
 			}
@@ -168,7 +168,7 @@ export const actions = {
 				console.log(e.message)
 				if (e.code === 'P2002') {
 					return fail(400, {
-						type: 'duplicateEntry',
+						type: 'duplicate-key',
 					})
 				}
 			}
