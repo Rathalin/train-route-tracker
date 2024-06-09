@@ -3,24 +3,9 @@
 	import ArrowUpIcon from 'svelte-material-icons/ArrowUp.svelte'
 	import ArrowDownIcon from 'svelte-material-icons/ArrowDown.svelte'
 	import { directionOptions, type DirectionOption } from './directionOptions'
-	import { goto } from '$app/navigation'
-	import { getToastStore } from '@skeletonlabs/skeleton'
-	import { browser } from '$app/environment'
-
-	export let form
+	import { enhance } from '$app/forms'
 
 	let selectedDirection: DirectionOption = 'asc'
-	let toastStore = getToastStore()
-
-	$: if (form?.create?.success === true) {
-		toastStore.trigger({
-			message: $t('route.train-routes.new.action.success.message'),
-			background: 'variant-filled-success',
-		})
-		if (browser) {
-			goto(`/train-routes/${form.create.shortName}/edit`)
-		}
-	}
 </script>
 
 <svelte:head>
@@ -33,7 +18,7 @@
 	</h1>
 
 	<article>
-		<form action="?/create" method="post">
+		<form action="?/create" method="post" use:enhance>
 			<label class="label max-w-[60ch]">
 				<span class="text-sm font-semibold">
 					{$t('route.train-routes.new.form.title.label')}
@@ -75,7 +60,7 @@
 				</div>
 			</label>
 
-			<label class="mt-8 label max-w-[60ch]">
+			<label class="mt-4 label max-w-[30ch]">
 				<span class="text-sm font-semibold">
 					{$t('route.train-routes.new.form.direction.label')}
 				</span>
@@ -104,7 +89,7 @@
 				</div>
 			</label>
 
-			<button class="btn variant-filled-primary mt-8" type="submit">
+			<button class="btn variant-filled-primary mt-10" type="submit">
 				<span>{$t('route.train-routes.new.button.create.label')}</span>
 			</button>
 		</form>

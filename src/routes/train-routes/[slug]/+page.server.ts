@@ -1,5 +1,3 @@
-import { fail, redirect } from '@sveltejs/kit'
-
 export async function load({ params, locals: { db } }) {
 	const routeId = params.slug
 

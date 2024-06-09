@@ -74,6 +74,13 @@
 					},
 					"heading": {
 						"edit": "Bearbeiten von"
+					},
+					"alert": {
+						"create": {
+							"success": {
+								"message": "Route \"{title}\" angelegt"
+							}
+						}
 					}
 				}
 			},
@@ -127,7 +134,7 @@
 			"alert": {
 				"delete": {
 					"success": {
-						"message": "Routenplan gelöscht."
+						"message": "Routenplan \"{title}\" gelöscht."
 					}
 				}
 			}

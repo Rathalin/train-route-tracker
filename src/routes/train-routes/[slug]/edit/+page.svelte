@@ -8,6 +8,7 @@
 	import AddWaypoint from './AddWaypoint.svelte'
 	import AddRow from './AddRow.svelte'
 	import { enhance } from '$app/forms'
+	import { page } from '$app/stores'
 
 	export let data
 	export let form
@@ -22,6 +23,16 @@
 		toastStore.trigger({
 			message: $t('common.action.error.message'),
 			background: 'variant-filled-error',
+		})
+	}
+
+	$: if ($page.url.searchParams.has('new')) {
+		const newTitle = $page.url.searchParams.get('new')
+		toastStore.trigger({
+			message: $t('route.train-routes.slug.edit.alert.create.success.message', {
+				values: { title: newTitle },
+			}),
+			background: 'variant-filled-success',
 		})
 	}
 </script>

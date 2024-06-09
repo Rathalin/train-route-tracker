@@ -74,6 +74,13 @@
 					},
 					"heading": {
 						"edit": "Edit"
+					},
+					"alert": {
+						"create": {
+							"success": {
+								"message": "Created \"{title}\" route"
+							}
+						}
 					}
 				}
 			},
@@ -126,7 +133,7 @@
 			"alert": {
 				"delete": {
 					"success": {
-						"message": "Route plan deleted."
+						"message": "Route plan \"{title}\" deleted."
 					}
 				}
 			}
