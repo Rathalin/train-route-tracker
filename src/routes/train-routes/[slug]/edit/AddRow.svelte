@@ -8,7 +8,7 @@
 <tr>
 	<td id="td-add" colspan="5">
 		<div class="flex flex-row justify-center items-center -my-4">
-			<div class="border-b-2 border-b-primary-900 flex-1"></div>
+			<div class="border-b-2 border-b-primary-900 flex-1 basis-[45%]"></div>
 			<button
 				class="btn-icon btn-icon-sm variant-ghost-primary"
 				on:click={() => {
@@ -17,7 +17,7 @@
 			>
 				<PlusIcon />
 			</button>
-			<div class="border-b-2 border-b-primary-900 flex-1"></div>
+			<div class="border-b-2 border-b-primary-900 flex-1 basis-[55%]"></div>
 		</div>
 	</td>
 </tr>
