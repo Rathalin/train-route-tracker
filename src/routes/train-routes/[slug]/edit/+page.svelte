@@ -3,9 +3,11 @@
 	import { getToastStore } from '@skeletonlabs/skeleton'
 	import ShowWaypoint from './ShowWaypoint.svelte'
 	import PencilIcon from 'svelte-material-icons/ArrowLeft.svelte'
+	import DeleteIcon from 'svelte-material-icons/Delete.svelte'
 	import EditWaypoint from './EditWaypoint.svelte'
 	import AddWaypoint from './AddWaypoint.svelte'
 	import AddRow from './AddRow.svelte'
+	import { enhance } from '$app/forms'
 
 	export let data
 	export let form
@@ -41,7 +43,7 @@
 			</div>
 		</div>
 
-		<div class="flex flex-row items-center flew-wrap gap-4">
+		<div class="flex flex-row items-center flew-wrap gap-2">
 			<a
 				href="/train-routes/{data.route.shortName}"
 				class="btn-icon variant-soft-secondary"
@@ -49,6 +51,11 @@
 			>
 				<PencilIcon />
 			</a>
+			<form action="?/deleteRoute" method="post" class="flex" use:enhance>
+				<button class="btn-icon variant-soft-secondary" type="submit">
+					<DeleteIcon />
+				</button>
+			</form>
 		</div>
 	</h1>
 

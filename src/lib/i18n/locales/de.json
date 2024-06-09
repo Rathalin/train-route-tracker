@@ -123,6 +123,13 @@
 				"create": {
 					"label": "Neuen Routenplan erstellen"
 				}
+			},
+			"alert": {
+				"delete": {
+					"success": {
+						"message": "Routenplan gelöscht."
+					}
+				}
 			}
 		}
 	},

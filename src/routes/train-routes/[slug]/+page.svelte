@@ -5,10 +5,8 @@
 	import WaypointProgress from './(lib)/WaypointProgress.svelte'
 	import HomeLinkButton from '$lib/components/buttons/HomeLinkButton.svelte'
 	import PencilIcon from 'svelte-material-icons/Pencil.svelte'
-	import DeleteIcon from 'svelte-material-icons/Delete.svelte'
 	import type { ProgressState } from './ProgressState'
 	import WaypointIcon from './(waypoints)/WaypointIcon.svelte'
-	import { enhance } from '$app/forms'
 
 	export let data
 
@@ -48,11 +46,6 @@
 				>
 					<PencilIcon />
 				</a>
-				<form action="?/delete" method="post" use:enhance>
-					<button class="btn-icon variant-soft-secondary" type="submit">
-						<DeleteIcon />
-					</button>
-				</form>
 			</div>
 		</h1>
 

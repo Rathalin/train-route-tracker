@@ -122,6 +122,13 @@
 				"create": {
 					"label": "Create new route plan"
 				}
+			},
+			"alert": {
+				"delete": {
+					"success": {
+						"message": "Route plan deleted."
+					}
+				}
 			}
 		}
 	},

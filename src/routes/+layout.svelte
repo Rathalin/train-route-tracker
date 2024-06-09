@@ -26,7 +26,7 @@
 	})
 </script>
 
-<Toast />
+<Toast position="bl" />
 
 <!-- App Shell -->
 <AppShell slotPageHeader="blur-sm">

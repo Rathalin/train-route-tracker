@@ -1,5 +1,5 @@
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library'
-import { error, fail } from '@sveltejs/kit'
+import { error, fail, redirect } from '@sveltejs/kit'
 import { z } from 'zod'
 import { zfd } from 'zod-form-data'
 import { waypointOptions } from '../(waypoints)/waypointOptions.js'
@@ -173,5 +173,25 @@ export const actions = {
 				}
 			}
 		}
+	},
+
+	deleteRoute: async ({ params, locals: { db } }) => {
+		const shortName = params.slug
+
+		await db.waypoint.deleteMany({
+			where: {
+				route: {
+					shortName,
+				},
+			},
+		})
+
+		await db.route.delete({
+			where: {
+				shortName,
+			},
+		})
+
+		return redirect(303, '/?deleted=true')
 	},
 }
