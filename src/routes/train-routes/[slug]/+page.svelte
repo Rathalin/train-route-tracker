@@ -47,7 +47,7 @@
 		</h1>
 
 		<div class="table-container">
-			<table class="table table-compact table-hover mb-10">
+			<table class="table table-interactive table-compact mb-10">
 				<thead>
 					<tr>
 						<th class="table-cell-fit">{$t('route.train-routes.slug.table.progress')}</th>
@@ -59,10 +59,13 @@
 				</thead>
 				<tbody>
 					{#each waypoints as waypoint}
+						<!-- class="hover:text-white hover:bg-secondary-500 cursor-pointer {waypoint.progress ===
+						'current'
+							? 'bg-secondary-800'
+							: ''} {waypoint.progress === 'passed' ? 'text-surface-500' : ''}" -->
 						<tr
-							class="table-row hover:text-white hover:bg-secondary-500 cursor-pointer {waypoint.progress ===
-							'current'
-								? 'bg-secondary-800'
+							class="{waypoint.progress === 'current'
+								? 'table-row-checked'
 								: ''} {waypoint.progress === 'passed' ? 'text-surface-500' : ''}"
 							on:click={() => {
 								currentWaypointIndex = waypoint.id
@@ -95,3 +98,9 @@
 		<HomeLinkButton />
 	</div>
 {/if}
+
+<style>
+	.table tbody td {
+		padding: 0 !important;
+	}
+</style>
