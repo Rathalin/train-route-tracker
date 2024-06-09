@@ -81,6 +81,14 @@
 								"message": "Created \"{title}\" route"
 							}
 						}
+					},
+					"modal": {
+						"delete-route": {
+							"title": "Please confirm",
+							"body": "Do you really want to delete the route plan \"{title}\"?",
+							"cancel": "No, cancel",
+							"confirm": "Yes, delete"
+						}
 					}
 				}
 			},

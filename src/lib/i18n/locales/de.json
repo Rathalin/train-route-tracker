@@ -81,6 +81,14 @@
 								"message": "Route \"{title}\" angelegt"
 							}
 						}
+					},
+					"modal": {
+						"delete-route": {
+							"title": "Bitte bestätigen",
+							"body": "Möchtest du den Routenplan \"{title}\" wirklich löschen?",
+							"cancel": "Nein, abbrechen",
+							"confirm": "Ja, löschen"
+						}
 					}
 				}
 			},

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ThemeMenu from '$lib/components/ThemeMenu.svelte'
 	import '../app.postcss'
-	import { AppShell, AppBar, Toast } from '@skeletonlabs/skeleton'
+	import { AppShell, AppBar, Toast, Modal } from '@skeletonlabs/skeleton'
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom'
 	import { themeStore } from '$lib/stores/theme.store'
 	import { browser } from '$app/environment'
@@ -27,6 +27,7 @@
 </script>
 
 <Toast position="bl" />
+<Modal />
 
 <!-- App Shell -->
 <AppShell slotPageHeader="blur-sm">

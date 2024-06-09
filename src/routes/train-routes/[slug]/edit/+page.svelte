@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from 'svelte-i18n'
-	import { getToastStore } from '@skeletonlabs/skeleton'
+	import { getModalStore, getToastStore } from '@skeletonlabs/skeleton'
 	import ShowWaypoint from './(lib)/ShowWaypoint.svelte'
 	import PencilIcon from 'svelte-material-icons/ArrowLeft.svelte'
 	import DeleteIcon from 'svelte-material-icons/Delete.svelte'
@@ -15,8 +15,11 @@
 
 	let editId: number | null = null
 	let add: boolean = false
+	let deleteFormRef: HTMLFormElement
 
 	const toastStore = getToastStore()
+	const modalStore = getModalStore()
+
 	$: if (form?.update?.success === true) {
 		editId = null
 	} else if (form?.create?.success === true) {
@@ -35,6 +38,23 @@
 				values: { title: newTitle },
 			}),
 			background: 'variant-filled-success',
+		})
+	}
+
+	function handleDeleteRouteClick() {
+		modalStore.trigger({
+			type: 'confirm',
+			title: $t('route.train-routes.slug.edit.modal.delete-route.title'),
+			body: $t('route.train-routes.slug.edit.modal.delete-route.body', {
+				values: { title: data.route.title },
+			}),
+			buttonTextCancel: $t('route.train-routes.slug.edit.modal.delete-route.cancel'),
+			buttonTextConfirm: $t('route.train-routes.slug.edit.modal.delete-route.confirm'),
+			response: (confirmed: boolean) => {
+				if (confirmed) {
+					deleteFormRef.submit()
+				}
+			},
 		})
 	}
 </script>
@@ -64,8 +84,12 @@
 			>
 				<PencilIcon />
 			</a>
-			<form action="?/deleteRoute" method="post" class="flex" use:enhance>
-				<button class="btn-icon variant-soft-secondary" type="submit">
+			<form action="?/deleteRoute" method="post" class="flex" bind:this={deleteFormRef} use:enhance>
+				<button
+					class="btn-icon variant-soft-secondary"
+					on:click={handleDeleteRouteClick}
+					type="button"
+				>
 					<DeleteIcon />
 				</button>
 			</form>
