@@ -19,6 +19,8 @@
 	const toastStore = getToastStore()
 	$: if (form?.update?.success === true) {
 		editId = null
+	} else if (form?.create?.success === true) {
+		add = false
 	} else if (form?.error != null) {
 		toastStore.trigger({
 			message: $t('common.action.error.message'),
@@ -94,6 +96,9 @@
 						editId = null
 					}}
 				/>
+				{#if data.route.waypoints.length === 0}
+					<tr class="h-6"></tr>
+				{/if}
 			{/if}
 			{#each data.route.waypoints as { id, kilometer, type, text, notes } (id)}
 				{#if id === editId}
